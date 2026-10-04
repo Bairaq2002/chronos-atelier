@@ -1,7 +1,36 @@
-import products from "../data/products";
+import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
+import { getProducts } from "../api/productApi";
 
 function Products() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const data = await getProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error(error);
+        setError("Produkte konnten nicht geladen werden.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProducts();
+  }, []);
+
+  if (loading) {
+    return <p>Produkte werden geladen...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   return (
     <main className="products-page">
       <section className="products-header">
