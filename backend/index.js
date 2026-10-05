@@ -2,50 +2,25 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-const app = express();
+const productsRoutes = require("./routes/productsRoutes");
 
+const app = express();
+const PORT = 5000;
+
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-const products = [
-  {
-    id: 1,
-    name: "Chronos Classic Black",
-    category: "Herren",
-    price: 249.99,
-    image: "/watches/watch1.jpg",
-    description: "Elegante Herrenuhr mit klassischem schwarzen Zifferblatt."
-  },
-  {
-    id: 2,
-    name: "Chronos Gold Edition",
-    category: "Herren",
-    price: 329.99,
-    image: "/watches/watch2.jpg",
-    description: "Hochwertige Uhr mit edlen Goldakzenten für einen stilvollen Auftritt."
-  },
-  {
-    id: 3,
-    name: "Chronos Elegant Rose",
-    category: "Damen",
-    price: 279.99,
-    image: "/watches/watch3.jpg",
-    description: "Elegante Damenuhr mit modernem Design und feinen Details."
-  }
-];
-
+// Test Route
 app.get("/", (req, res) => {
   res.json({
-    message: "Chronos Atelier Backend läuft!"
+    message: "Chronos Atelier Backend is running 🚀",
   });
 });
 
-app.get("/api/products", (req, res) => {
-  res.json(products);
-});
-
-const PORT = process.env.PORT || 5000;
+// Products Routes
+app.use("/api/products", productsRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Backend läuft auf http://localhost:${PORT}`);
+  console.log(`Backend running on http://localhost:${PORT}`);
 });
