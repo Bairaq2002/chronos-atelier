@@ -2,32 +2,59 @@ import { Link } from "react-router-dom";
 
 function Profile() {
   return (
-    <main className="page">
-      <section className="page-content">
-        <p className="section-label">
-          CHRONOS ATELIER
-        </p>
+    <main className="profile-page">
+      <div className="profile-background">
 
-        <h1>Mein Profil</h1>
+        <section className="profile-card">
 
-        <p>
-          Willkommen in Ihrem persönlichen Bereich.
-        </p>
+          <div className="profile-header">
 
-        <div className="profile-card">
-          <h2>Persönliche Daten</h2>
+            <p className="profile-label">
+              CHRONOS ATELIER
+            </p>
 
-          <p>Name: Noch nicht angemeldet</p>
-          <p>E-Mail: —</p>
+            <h1>Mein Profil</h1>
+
+            <p className="profile-description">
+              Willkommen in Ihrem persönlichen Bereich.
+            </p>
+
+          </div>
+
+          <div className="profile-info-card">
+
+            <h2>Persönliche Daten</h2>
+
+            <div className="profile-info-row">
+              <span>Name</span>
+              <strong>Noch nicht angemeldet</strong>
+            </div>
+
+            <div className="profile-info-row">
+              <span>E-Mail</span>
+              <strong>—</strong>
+            </div>
+
+          </div>
 
           <Link
             to="/login"
-            className="hero-button"
+            className="profile-button"
           >
             Anmelden
           </Link>
-        </div>
-      </section>
+
+          <div className="profile-divider">
+            <span>CHRONOS ATELIER</span>
+          </div>
+
+          <p className="profile-footer-text">
+            Exklusive Uhren für besondere Momente.
+          </p>
+
+        </section>
+
+      </div>
     </main>
   );
 }

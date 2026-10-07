@@ -2,34 +2,58 @@ import { Link } from "react-router-dom";
 
 function Orders() {
   return (
-    <main className="page">
-      <section className="page-content">
-        <p className="section-label">
-          CHRONOS ATELIER
-        </p>
+    <main className="orders-page">
+      <div className="orders-background">
 
-        <h1>Meine Bestellungen</h1>
+        <section className="orders-card">
 
-        <p>
-          Hier werden Ihre Bestellungen angezeigt.
-        </p>
+          <div className="orders-header">
 
-        <div className="empty-orders">
-          <h2>Noch keine Bestellungen</h2>
+            <p className="orders-label">
+              CHRONOS ATELIER
+            </p>
 
-          <p>
-            Sobald Sie eine Bestellung aufgegeben haben,
-            wird sie hier angezeigt.
+            <h1>Meine Bestellungen</h1>
+
+            <p className="orders-description">
+              Hier werden Ihre Bestellungen angezeigt.
+            </p>
+
+          </div>
+
+          <div className="empty-orders">
+
+            <div className="orders-icon">
+              ✓
+            </div>
+
+            <h2>Noch keine Bestellungen</h2>
+
+            <p>
+              Sobald Sie eine Bestellung aufgegeben haben,
+              wird sie hier angezeigt.
+            </p>
+
+            <Link
+              to="/products"
+              className="orders-button"
+            >
+              Zur Kollektion
+            </Link>
+
+          </div>
+
+          <div className="orders-divider">
+            <span>CHRONOS ATELIER</span>
+          </div>
+
+          <p className="orders-footer-text">
+            Exklusive Uhren für besondere Momente.
           </p>
 
-          <Link
-            to="/products"
-            className="hero-button"
-          >
-            Zur Kollektion
-          </Link>
-        </div>
-      </section>
+        </section>
+
+      </div>
     </main>
   );
 }

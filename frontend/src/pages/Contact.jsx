@@ -1,56 +1,106 @@
 function Contact() {
   return (
-    <main className="page">
-      <section className="page-content contact-page">
-        <p className="section-label">CHRONOS ATELIER</p>
+    <main className="contact-page">
+      <div className="contact-background">
 
-        <h1>Kontakt</h1>
+        <section className="contact-card">
 
-        <p>
-          Haben Sie Fragen zu unseren Uhren?
-          Wir freuen uns auf Ihre Nachricht.
-        </p>
+          <div className="contact-header">
 
-        <form className="contact-form">
-          <input
-            type="text"
-            placeholder="Ihr Name"
-            required
-          />
+            <p className="contact-label">
+              CHRONOS ATELIER
+            </p>
 
-          <input
-            type="email"
-            placeholder="Ihre E-Mail-Adresse"
-            required
-          />
+            <h1>Kontakt</h1>
 
-          <textarea
-            placeholder="Ihre Nachricht"
-            rows="6"
-            required
-          />
+            <p className="contact-description">
+              Haben Sie Fragen zu unseren Uhren?
+              Wir freuen uns auf Ihre Nachricht.
+            </p>
 
-          <button type="submit">
-            Nachricht senden
-          </button>
-        </form>
+          </div>
 
-        <div className="contact-info">
-          <p>
-            E-Mail:{" "}
-            <a href="mailto:info@chronos-atelier.de">
-              info@chronos-atelier.de
-            </a>
+          <form className="contact-form">
+
+            <div className="contact-field">
+              <label htmlFor="contact-name">
+                Name
+              </label>
+
+              <input
+                id="contact-name"
+                type="text"
+                placeholder="Ihr Name"
+                required
+              />
+            </div>
+
+            <div className="contact-field">
+              <label htmlFor="contact-email">
+                E-Mail-Adresse
+              </label>
+
+              <input
+                id="contact-email"
+                type="email"
+                placeholder="Ihre E-Mail-Adresse"
+                required
+              />
+            </div>
+
+            <div className="contact-field">
+              <label htmlFor="contact-message">
+                Nachricht
+              </label>
+
+              <textarea
+                id="contact-message"
+                placeholder="Ihre Nachricht"
+                rows="6"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="contact-button"
+            >
+              Nachricht senden
+            </button>
+
+          </form>
+
+          <div className="contact-info">
+
+            <div className="contact-info-item">
+              <span>E-Mail</span>
+
+              <a href="mailto:info@chronos-atelier.de">
+                info@chronos-atelier.de
+              </a>
+            </div>
+
+            <div className="contact-info-item">
+              <span>Telefon</span>
+
+              <a href="tel:+491234567890">
+                +49 123 4567890
+              </a>
+            </div>
+
+          </div>
+
+          <div className="contact-divider">
+            <span>CHRONOS ATELIER</span>
+          </div>
+
+          <p className="contact-footer-text">
+            Exklusive Uhren für besondere Momente.
           </p>
 
-          <p>
-            Telefon:{" "}
-            <a href="tel:+491234567890">
-              +49 123 4567890
-            </a>
-          </p>
-        </div>
-      </section>
+        </section>
+
+      </div>
     </main>
   );
 }

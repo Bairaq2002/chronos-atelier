@@ -1,9 +1,19 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
 import "./App.css";
 
+// Components
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
+import PublicRoute from "./components/PublicRoute";
 
+// Pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -19,21 +29,112 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <BrowserRouter>
+
+      {/* Navigation */}
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
 
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
+        {/* =========================
+            STARTSEITE
+        ========================= */}
 
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/"
+          element={
+            <Navigate to="/login" replace />
+          }
+        />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        {/* =========================
+            PUBLIC ROUTES
+        ========================= */}
 
+        {/* Login */}
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+            }
+        />
+
+        {/* Register */}
+        <Route
+          path="/register"
+          element={
+            <PublicRoute>
+              <Register />
+            </PublicRoute>
+          }
+        />
+
+        {/* =========================
+            PROTECTED ROUTES
+        ========================= */}
+
+        {/* Home */}
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* About */}
+        <Route
+          path="/about"
+          element={
+            <ProtectedRoute>
+              <About />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Contact */}
+        <Route
+          path="/contact"
+          element={
+            <ProtectedRoute>
+              <Contact />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Products */}
+        <Route
+          path="/products"
+          element={
+            <ProtectedRoute>
+              <Products />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Product Details */}
+        <Route
+          path="/products/:id"
+          element={
+            <ProtectedRoute>
+              <ProductDetails />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Cart */}
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Profile */}
         <Route
           path="/profile"
           element={
@@ -43,6 +144,7 @@ function App() {
           }
         />
 
+        {/* Orders */}
         <Route
           path="/orders"
           element={
@@ -52,8 +154,20 @@ function App() {
           }
         />
 
-        <Route path="*" element={<NotFound />} />
+        {/* =========================
+            404
+        ========================= */}
+
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
+
       </Routes>
+
+      {/* Footer */}
+      <Footer />
+
     </BrowserRouter>
   );
 }

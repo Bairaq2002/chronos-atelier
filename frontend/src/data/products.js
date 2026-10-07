@@ -6,7 +6,7 @@ const products = [
     price: 249.99,
     image: "/watches/watch1.jpg",
     description:
-      "Elegante Herrenarmbanduhr mit klassischem schwarzen Zifferblatt."
+      "Elegante Herrenuhr mit klassischem schwarzen Zifferblatt und zeitlosem Design.",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const products = [
     price: 329.99,
     image: "/watches/watch2.jpg",
     description:
-      "Hochwertige Uhr mit edlen Goldakzenten für einen stilvollen Auftritt."
+      "Hochwertige Herrenuhr mit edlen Goldakzenten für einen stilvollen Auftritt.",
   },
   {
     id: 3,
@@ -24,35 +24,35 @@ const products = [
     price: 279.99,
     image: "/watches/watch3.jpg",
     description:
-      "Elegante Damenuhr mit modernem Design und feinen Details."
+      "Elegante Damenuhr mit modernem Design und feinen Roségold-Details.",
   },
   {
     id: 4,
-    name: "Chronos Silver Lady",
-    category: "Damen",
+    name: "Chronos Silver Elite",
+    category: "Herren",
     price: 299.99,
     image: "/watches/watch4.jpg",
     description:
-      "Zeitlose Damenuhr mit einem eleganten silbernen Finish."
+      "Stilvolle Herrenuhr mit silbernem Gehäuse und elegantem Zifferblatt.",
   },
   {
     id: 5,
-    name: "Chronos Royal",
+    name: "Chronos Royal Blue",
     category: "Herren",
-    price: 399.99,
+    price: 349.99,
     image: "/watches/watch5.jpg",
     description:
-      "Exklusive Herrenarmbanduhr für einen gehobenen und klassischen Stil."
+      "Exklusive Herrenuhr mit markantem blauen Zifferblatt und luxuriöser Ausstrahlung.",
   },
   {
     id: 6,
-    name: "Chronos Pearl",
+    name: "Chronos Prestige",
     category: "Damen",
-    price: 349.99,
+    price: 389.99,
     image: "/watches/watch6.jpg",
     description:
-      "Edle Damenuhr mit einem minimalistischen und eleganten Erscheinungsbild."
-  }
+      "Edle Damenuhr mit hochwertigem Design für besondere und elegante Momente.",
+  },
 ];
 
 export default products;

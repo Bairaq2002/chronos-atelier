@@ -1,70 +1,192 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Register() {
-  const handleSubmit = (event) => {
+  const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    localStorage.setItem("isAuthenticated", "true");
+    setError("");
+    setSuccess("");
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/auth/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
+
+      console.log(
+        "Registrierung erfolgreich:",
+        response.data
+      );
+
+      setSuccess(
+        "Registrierung erfolgreich! Sie werden zum Login weitergeleitet."
+      );
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
+    } catch (error) {
+      console.error(
+        "Registrierung Fehler:",
+        error
+      );
+
+      if (error.response) {
+        setError(
+          error.response.data.message ||
+            "Registrierung fehlgeschlagen."
+        );
+      } else {
+        setError(
+          "Der Server ist momentan nicht erreichbar."
+        );
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <main className="page">
-      <section className="auth-page">
-        <div className="auth-card">
-          <p className="section-label">
-            CHRONOS ATELIER
-          </p>
+    <main className="register-page">
+      <div className="register-background">
 
-          <h1>Konto erstellen</h1>
+        <section className="register-card">
 
-          <p className="auth-description">
-            Erstellen Sie Ihr persönliches Chronos-Atelier-Konto.
-          </p>
+          <div className="register-header">
+
+            <p className="register-label">
+              CHRONOS ATELIER
+            </p>
+
+            <h1>
+              Konto erstellen
+            </h1>
+
+            <p className="register-description">
+              Erstellen Sie Ihr persönliches Konto
+              und entdecken Sie zeitlose Eleganz.
+            </p>
+
+          </div>
+
+          {error && (
+            <div className="register-error">
+              {error}
+            </div>
+          )}
+
+          {success && (
+            <div className="register-success">
+              {success}
+            </div>
+          )}
 
           <form
             onSubmit={handleSubmit}
-            className="auth-form"
+            className="register-form"
           >
-            <label htmlFor="name">Name</label>
 
-            <input
-              id="name"
-              type="text"
-              placeholder="Ihr Name"
-              required
-            />
+            <div className="register-field">
+              <label htmlFor="name">
+                Name
+              </label>
 
-            <label htmlFor="email">E-Mail</label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Ihr Name"
+                value={name}
+                onChange={(event) =>
+                  setName(event.target.value)
+                }
+                required
+              />
+            </div>
 
-            <input
-              id="email"
-              type="email"
-              placeholder="Ihre E-Mail-Adresse"
-              required
-            />
+            <div className="register-field">
+              <label htmlFor="email">
+                E-Mail-Adresse
+              </label>
 
-            <label htmlFor="password">Passwort</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="Ihre E-Mail-Adresse"
+                value={email}
+                onChange={(event) =>
+                  setEmail(event.target.value)
+                }
+                required
+              />
+            </div>
 
-            <input
-              id="password"
-              type="password"
-              placeholder="Ihr Passwort"
-              required
-            />
+            <div className="register-field">
+              <label htmlFor="password">
+                Passwort
+              </label>
 
-            <button type="submit">
-              Registrieren
+              <input
+                id="password"
+                type="password"
+                placeholder="Ihr Passwort"
+                value={password}
+                onChange={(event) =>
+                  setPassword(event.target.value)
+                }
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="register-button"
+              disabled={loading}
+            >
+              {loading
+                ? "Registrierung..."
+                : "Registrieren"}
             </button>
+
           </form>
 
-          <p className="auth-footer">
-            Bereits ein Konto?{" "}
+          <div className="register-login">
+            <span>
+              Bereits ein Konto?
+            </span>
+
             <Link to="/login">
-              Anmelden
+              Jetzt anmelden
             </Link>
+          </div>
+
+          <div className="register-divider">
+            <span>CHRONOS ATELIER</span>
+          </div>
+
+          <p className="register-footer-text">
+            Exklusive Uhren für besondere Momente.
           </p>
-        </div>
-      </section>
+
+        </section>
+
+      </div>
     </main>
   );
 }

@@ -1,55 +1,157 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
-  const handleSubmit = (event) => {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    setError("");
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
+
+      const { token, user } = response.data;
+
+      localStorage.setItem("token", token);
+      localStorage.setItem("isAuthenticated", "true");
+      localStorage.setItem("user", JSON.stringify(user));
+
+      navigate("/home");
+    } catch (error) {
+      console.error("Login Fehler:", error);
+
+      if (error.response) {
+        setError(
+          error.response.data.message ||
+            "E-Mail oder Passwort ist falsch."
+        );
+      } else {
+        setError(
+          "Der Server ist momentan nicht erreichbar."
+        );
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <main className="page">
-      <section className="auth-page">
-        <div className="auth-card">
-          <p className="section-label">CHRONOS ATELIER</p>
+    <main className="login-page">
+      <div className="login-background">
 
-          <h1>Willkommen zurück</h1>
+        <section className="login-card">
 
-          <p className="auth-description">
-            Melden Sie sich an, um auf Ihr Profil und
-            Ihre Bestellungen zuzugreifen.
-          </p>
+          <div className="login-header">
 
-          <form onSubmit={handleSubmit} className="auth-form">
-            <label htmlFor="email">E-Mail</label>
+            <p className="login-label">
+              CHRONOS ATELIER
+            </p>
 
-            <input
-              id="email"
-              type="email"
-              placeholder="Ihre E-Mail-Adresse"
-              required
-            />
+            <h1>
+              Willkommen zurück
+            </h1>
 
-            <label htmlFor="password">Passwort</label>
+            <p className="login-description">
+              Melden Sie sich an und entdecken Sie
+              zeitlose Eleganz.
+            </p>
 
-            <input
-              id="password"
-              type="password"
-              placeholder="Ihr Passwort"
-              required
-            />
+          </div>
 
-            <button type="submit">
-              Anmelden
+          {error && (
+            <div className="login-error">
+              {error}
+            </div>
+          )}
+
+          <form
+            onSubmit={handleSubmit}
+            className="login-form"
+          >
+
+            <div className="login-field">
+              <label htmlFor="email">
+                E-Mail-Adresse
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                placeholder="Ihre E-Mail-Adresse"
+                value={email}
+                onChange={(event) =>
+                  setEmail(event.target.value)
+                }
+                required
+              />
+            </div>
+
+            <div className="login-field">
+              <label htmlFor="password">
+                Passwort
+              </label>
+
+              <input
+                id="password"
+                type="password"
+                placeholder="Ihr Passwort"
+                value={password}
+                onChange={(event) =>
+                  setPassword(event.target.value)
+                }
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="login-button"
+              disabled={loading}
+            >
+              {loading
+                ? "Anmeldung..."
+                : "Anmelden"}
             </button>
+
           </form>
 
-          <p className="auth-footer">
-            Noch kein Konto?{" "}
+          <div className="login-register">
+            <span>
+              Noch kein Konto?
+            </span>
+
             <Link to="/register">
               Jetzt registrieren
             </Link>
+          </div>
+
+          <div className="login-divider">
+            <span>CHRONOS ATELIER</span>
+          </div>
+
+          <p className="login-footer-text">
+            Exklusive Uhren für besondere Momente.
           </p>
-        </div>
-      </section>
+
+        </section>
+
+      </div>
     </main>
   );
 }
