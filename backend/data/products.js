@@ -26,6 +26,33 @@ const products = [
     description:
       "Elegante Damenuhr mit modernem Design und feinen Details.",
   },
+  {
+    id: 4,
+    name: "Chronos Silver Elite",
+    category: "Herren",
+    price: 299.99,
+    image: "/watches/watch4.jpg",
+    description:
+      "Stilvolle Herrenuhr mit silbernem Gehäuse und elegantem Zifferblatt.",
+  },
+  {
+    id: 5,
+    name: "Chronos Royal Blue",
+    category: "Herren",
+    price: 349.99,
+    image: "/watches/watch5.jpg",
+    description:
+      "Exklusive Herrenuhr mit markantem blauen Zifferblatt und luxuriöser Ausstrahlung.",
+  },
+  {
+    id: 6,
+    name: "Chronos Prestige",
+    category: "Damen",
+    price: 389.99,
+    image: "/watches/watch6.jpg",
+    description:
+      "Edle Damenuhr mit hochwertigem Design für besondere Momente.",
+  },
 ];
 
 module.exports = products;

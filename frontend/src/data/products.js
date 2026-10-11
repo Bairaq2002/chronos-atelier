@@ -6,7 +6,7 @@ const products = [
     price: 249.99,
     image: "/watches/watch1.jpg",
     description:
-      "Elegante Herrenuhr mit klassischem schwarzen Zifferblatt und zeitlosem Design.",
+      "Elegante Herrenuhr mit klassischem schwarzen Zifferblatt.",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const products = [
     price: 329.99,
     image: "/watches/watch2.jpg",
     description:
-      "Hochwertige Herrenuhr mit edlen Goldakzenten für einen stilvollen Auftritt.",
+      "Hochwertige Uhr mit edlen Goldakzenten für einen stilvollen Auftritt.",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const products = [
     price: 279.99,
     image: "/watches/watch3.jpg",
     description:
-      "Elegante Damenuhr mit modernem Design und feinen Roségold-Details.",
+      "Elegante Damenuhr mit modernem Design und feinen Details.",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const products = [
     price: 349.99,
     image: "/watches/watch5.jpg",
     description:
-      "Exklusive Herrenuhr mit markantem blauen Zifferblatt und luxuriöser Ausstrahlung.",
+      "Exklusive Herrenuhr mit markantem blauen Zifferblatt.",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const products = [
     price: 389.99,
     image: "/watches/watch6.jpg",
     description:
-      "Edle Damenuhr mit hochwertigem Design für besondere und elegante Momente.",
+      "Edle Damenuhr mit hochwertigem Design für besondere Momente.",
   },
 ];
 

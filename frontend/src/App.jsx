@@ -4,15 +4,12 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-
 import "./App.css";
-
 // Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PublicRoute from "./components/PublicRoute";
-
 // Pages
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -25,42 +22,32 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Orders from "./pages/Orders";
 import NotFound from "./pages/NotFound";
-
+// Legal pages
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
+import AGB from "./pages/AGB";
+// Checkout pages
+import Checkout from "./pages/Checkout";
+import OrderSuccess from "./pages/OrderSuccess";
 function App() {
   return (
     <BrowserRouter>
-
-      {/* Navigation */}
       <Navbar />
-
       <Routes>
-
-        {/* =========================
-            STARTSEITE
-        ========================= */}
-
+        {/* Default page */}
         <Route
           path="/"
-          element={
-            <Navigate to="/login" replace />
-          }
+          element={<Navigate to="/login" replace />}
         />
-
-        {/* =========================
-            PUBLIC ROUTES
-        ========================= */}
-
-        {/* Login */}
+        {/* Public pages */}
         <Route
           path="/login"
           element={
             <PublicRoute>
               <Login />
             </PublicRoute>
-            }
+          }
         />
-
-        {/* Register */}
         <Route
           path="/register"
           element={
@@ -69,11 +56,6 @@ function App() {
             </PublicRoute>
           }
         />
-
-        {/* =========================
-            PROTECTED ROUTES
-        ========================= */}
-
         {/* Home */}
         <Route
           path="/home"
@@ -83,7 +65,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         {/* About */}
         <Route
           path="/about"
@@ -93,17 +74,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-        {/* Contact */}
-        <Route
-          path="/contact"
-          element={
-            <ProtectedRoute>
-              <Contact />
-            </ProtectedRoute>
-          }
-        />
-
         {/* Products */}
         <Route
           path="/products"
@@ -113,8 +83,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-        {/* Product Details */}
         <Route
           path="/products/:id"
           element={
@@ -123,8 +91,16 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-        {/* Cart */}
+        {/* Contact */}
+        <Route
+          path="/contact"
+          element={
+            <ProtectedRoute>
+              <Contact />
+            </ProtectedRoute>
+          }
+        />
+        {/* Shopping cart */}
         <Route
           path="/cart"
           element={
@@ -133,8 +109,25 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-        {/* Profile */}
+        {/* Checkout */}
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          }
+        />
+        {/* Order confirmation */}
+        <Route
+          path="/order-success"
+          element={
+            <ProtectedRoute>
+              <OrderSuccess />
+            </ProtectedRoute>
+          }
+        />
+        {/* Customer profile */}
         <Route
           path="/profile"
           element={
@@ -143,7 +136,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         {/* Orders */}
         <Route
           path="/orders"
@@ -153,23 +145,39 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-        {/* =========================
-            404
-        ========================= */}
-
+        {/* Legal pages */}
+        <Route
+          path="/impressum"
+          element={
+            <ProtectedRoute>
+              <Impressum />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/datenschutz"
+          element={
+            <ProtectedRoute>
+              <Datenschutz />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/agb"
+          element={
+            <ProtectedRoute>
+              <AGB />
+            </ProtectedRoute>
+          }
+        />
+        {/* 404 */}
         <Route
           path="*"
           element={<NotFound />}
         />
-
       </Routes>
-
-      {/* Footer */}
       <Footer />
-
     </BrowserRouter>
   );
 }
-
 export default App;
