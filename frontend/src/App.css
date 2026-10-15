@@ -7836,3 +7836,6675 @@ a {
     font-size: 1.05rem;
   }
 }
+
+/* =================================
+   CHRONOS ATELIER
+   Royal White & Gold Theme
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --royal-bg: #fbf8f1;
+  --royal-white: #ffffff;
+  --royal-gold: #b78324;
+  --royal-gold-light: #e4c477;
+  --royal-text: #211b13;
+  --royal-muted: #756d61;
+  --royal-border: #e9dfcc;
+  --royal-shadow: 0 12px 35px rgba(92, 66, 25, 0.09);
+}
+
+body {
+  background: var(--royal-bg);
+  color: var(--royal-text);
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+.logo,
+.footer-brand h2 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+.product-card,
+.cart-product,
+.products-card,
+.cart-main-card {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--royal-gold);
+  outline-offset: 4px;
+}
+
+/* Elegant gold buttons */
+
+.hero-button,
+.product-button,
+.details-cart-button,
+.cart-primary-button,
+.cart-checkout-button,
+.checkout-button,
+.orders-button,
+.profile-button,
+.welcome-banner-button {
+  background: linear-gradient(
+    135deg,
+    #c99a3b,
+    #a87318
+  );
+  color: #fffdf8;
+  border: 1px solid #bd8b2d;
+  border-radius: 5px;
+  box-shadow: 0 5px 14px rgba(160, 112, 27, 0.16);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-button:hover,
+.product-button:hover,
+.details-cart-button:hover,
+.cart-primary-button:hover,
+.cart-checkout-button:hover,
+.checkout-button:hover,
+.orders-button:hover,
+.profile-button:hover,
+.welcome-banner-button:hover {
+  background: linear-gradient(
+    135deg,
+    #e0bd68,
+    #b78324
+  );
+  box-shadow: 0 9px 22px rgba(160, 112, 27, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Soft luxury animation */
+
+@keyframes royalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-page,
+.products-page,
+.product-details-page,
+.cart-page,
+.checkout-page,
+.orders-page,
+.profile-page,
+.contact-page {
+  animation: royalFadeIn 0.65s ease both;
+}
+
+/* Product image hover */
+
+.product-image img,
+.product-card img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img,
+.product-card:hover img {
+  transform: scale(1.035);
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== ROYAL HOME ===== */
+
+.royal-home {
+  background: #fbf8f1;
+  color: #211b13;
+}
+
+.royal-hero {
+  min-height: 480px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      #f0dfbd 0,
+      #fbf8f1 48%,
+      #f5eddf 100%
+    );
+}
+
+.royal-hero-content {
+  padding: 65px clamp(24px, 6vw, 90px);
+  animation: royalFadeIn 0.8s ease both;
+}
+
+.royal-eyebrow {
+  color: #a87318;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin-bottom: 18px;
+}
+
+.royal-hero-content h1 {
+  font-size: clamp(48px, 6vw, 86px);
+  line-height: 0.88;
+  letter-spacing: -2px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.royal-title-line {
+  width: 75px;
+  height: 2px;
+  margin: 25px 0;
+  background: #b78324;
+}
+
+.royal-hero-content h2 {
+  font-size: clamp(25px, 3vw, 39px);
+  line-height: 1.08;
+  font-weight: 500;
+  margin: 0 0 18px;
+}
+
+.royal-hero-description {
+  max-width: 440px;
+  color: #756d61;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.royal-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.royal-primary-button,
+.royal-outline-button {
+  min-height: 46px;
+  padding: 13px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.royal-primary-button {
+  color: white;
+  background: linear-gradient(135deg, #c99a3b, #a87318);
+  border: 1px solid #b78324;
+}
+
+.royal-primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px #b7832433;
+}
+
+.royal-outline-button {
+  color: #805514;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #b78324;
+}
+
+.royal-outline-button:hover {
+  background: #f2e5ca;
+}
+
+.royal-hero-image {
+  height: 480px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.royal-hero-image img {
+  width: 100%;
+  height: 100%;
+  max-width: 650px;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 25px #7c5a2430);
+  animation: royalWatchReveal 1s ease both;
+}
+
+@keyframes royalWatchReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Benefits strip */
+
+.royal-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: #fff;
+  border-top: 1px solid #eee5d6;
+  border-bottom: 1px solid #eee5d6;
+  padding: 25px 4%;
+}
+
+.royal-benefits article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 8px 14px;
+  border-right: 1px solid #e9dfcc;
+}
+
+.royal-benefits article:last-child {
+  border-right: none;
+}
+
+.royal-benefit-icon {
+  color: #b78324;
+  font-size: 30px;
+}
+
+.royal-benefits h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  margin: 0 0 4px;
+}
+
+.royal-benefits p {
+  color: #756d61;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Collection introduction */
+
+.royal-collection {
+  text-align: center;
+  padding: 65px 20px 75px;
+  background: linear-gradient(#fff, #fbf8f1);
+}
+
+.royal-collection .royal-eyebrow {
+  margin-bottom: 10px;
+}
+
+.royal-collection h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin: 0 0 12px;
+}
+
+.royal-collection > p:not(.royal-eyebrow) {
+  color: #756d61;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 850px) {
+  .royal-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .royal-hero-content {
+    padding: 50px 28px 20px;
+  }
+
+  .royal-hero-image {
+    height: 320px;
+    padding: 10px 24px 30px;
+  }
+
+  .royal-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 0;
+  }
+
+  .royal-benefits article:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .royal-hero-content h1 {
+    font-size: 53px;
+  }
+
+  .royal-hero-actions {
+    flex-direction: column;
+  }
+
+  .royal-hero-actions a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .royal-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .royal-benefits article {
+    justify-content: flex-start;
+    border-right: none;
+    border-bottom: 1px solid #e9dfcc;
+    padding: 12px 8px;
+  }
+
+  .royal-benefits article:last-child {
+    border-bottom: none;
+  }
+}
+
+/* =================================
+   ROYAL PRODUCT COLLECTION
+================================= */
+
+.products-page {
+  background: #fbf8f1;
+  color: #211b13;
+  padding: 45px 20px 70px;
+}
+
+.products-background {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.products-card {
+  background: #fff;
+  border: 1px solid #eee5d6;
+  border-radius: 6px;
+  padding: clamp(22px, 4vw, 55px);
+  box-shadow: 0 12px 35px rgba(92, 66, 25, 0.06);
+}
+
+.products-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 35px;
+}
+
+.products-label {
+  color: #b78324;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin-bottom: 12px;
+}
+
+.products-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.products-description {
+  color: #756d61;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.products-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  margin-bottom: 25px;
+  border-top: 1px solid #eee5d6;
+  border-bottom: 1px solid #eee5d6;
+  color: #756d61;
+  font-size: 12px;
+}
+
+/* Product grid */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #eee5d6;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(92, 66, 25, 0.05);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: #d9bd82;
+  box-shadow: 0 14px 32px rgba(92, 66, 25, 0.12);
+}
+
+.product-image {
+  height: 270px;
+  overflow: hidden;
+  background: #f6f1e8;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  padding: 12px;
+  box-sizing: border-box;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.045);
+}
+
+.product-info {
+  padding: 22px;
+}
+
+.product-category {
+  display: inline-block;
+  color: #a87318;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.product-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #211b13;
+  font-size: 25px;
+  line-height: 1.15;
+  margin: 0 0 9px;
+}
+
+.product-info p {
+  color: #756d61;
+  font-size: 12px;
+  line-height: 1.8;
+  min-height: 42px;
+  margin: 0 0 18px;
+}
+
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 15px;
+  border-top: 1px solid #eee5d6;
+}
+
+.product-price {
+  color: #9c6b19;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.product-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 18px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* Footer text in the collection */
+
+.products-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 40px 0 18px;
+  color: #b78324;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.products-divider::before,
+.products-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #e9dfcc;
+}
+
+.products-footer-text {
+  text-align: center;
+  color: #756d61;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+}
+
+/* Responsive product grid */
+
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-image {
+    height: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-page {
+    padding: 22px 12px 40px;
+  }
+
+  .products-card {
+    padding: 22px 15px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .product-image {
+    height: 260px;
+  }
+
+  .product-info {
+    padding: 18px;
+  }
+
+  .products-line {
+    font-size: 11px;
+  }
+}
+
+/* =================================
+   ROYAL PRODUCT DETAILS
+================================= */
+
+.product-details-page {
+  min-height: 70vh;
+  padding: 55px 20px 75px;
+  background: #fbf8f1;
+  color: #211b13;
+}
+
+.product-details-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 55px;
+  align-items: center;
+}
+
+.product-details-image {
+  min-width: 0;
+  height: 490px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 25px;
+  background: #fff;
+  border: 1px solid #eee5d6;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px rgba(92, 66, 25, 0.07);
+}
+
+.product-details-image img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.product-details-image:hover img {
+  transform: scale(1.035);
+}
+
+.product-details-info {
+  min-width: 0;
+  padding: 15px 0;
+}
+
+.product-details-category {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #a87318;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.product-details-info h1 {
+  margin: 0 0 18px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.product-details-description {
+  margin: 0 0 25px;
+  color: #756d61;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.product-details-price {
+  margin: 25px 0;
+  color: #a87318;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.details-cart-button {
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid #b78324;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #c99a3b, #a87318);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 18px rgba(160, 112, 27, 0.16);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-cart-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(160, 112, 27, 0.25);
+}
+
+.details-cart-button:active {
+  transform: scale(0.99);
+}
+
+.cart-arrow {
+  font-size: 18px;
+}
+
+.product-details-back {
+  display: inline-block;
+  margin-top: 22px;
+  color: #805514;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.product-details-back:hover {
+  color: #b78324;
+}
+
+@media (max-width: 800px) {
+  .product-details-page {
+    padding: 30px 16px 50px;
+  }
+
+  .product-details-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .product-details-image {
+    height: 350px;
+  }
+
+  .product-details-info {
+    padding: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-details-image {
+    height: 280px;
+    padding: 15px;
+  }
+
+  .product-details-info h1 {
+    font-size: 38px;
+  }
+
+  .product-details-price {
+    font-size: 26px;
+  }
+}
+
+/* =================================
+   ROYAL WHITE & GOLD CART
+================================= */
+
+.cart-page {
+  min-height: 70vh;
+  padding: 45px 20px 70px;
+  background: #fbf8f1;
+  color: #211b13;
+}
+
+.cart-background {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.cart-main-card,
+.cart-empty-card {
+  padding: clamp(22px, 4vw, 48px);
+  background: #fff;
+  border: 1px solid #eee5d6;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px rgba(92, 66, 25, 0.07);
+}
+
+.cart-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.cart-label {
+  color: #b78324;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.cart-header h1 {
+  margin: 12px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 56px);
+}
+
+.cart-description {
+  color: #756d61;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 28px;
+  align-items: start;
+}
+
+.cart-products {
+  min-width: 0;
+}
+
+.cart-products-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e9dfcc;
+  color: #756d61;
+  font-size: 13px;
+}
+
+.cart-product {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #eee5d6;
+}
+
+.cart-product-image {
+  width: 110px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f6f1e8;
+  border-radius: 6px;
+}
+
+.cart-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: transform 0.35s ease;
+}
+
+.cart-product-image:hover img {
+  transform: scale(1.05);
+}
+
+.cart-product-category {
+  color: #a87318;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cart-product-info h2 {
+  margin: 7px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+}
+
+.cart-product-description {
+  color: #756d61;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.cart-product-price {
+  color: #a87318;
+  font-weight: 700;
+}
+
+.cart-product-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5d7bb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cart-quantity button {
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: #fbf8f1;
+  color: #805514;
+  font-size: 18px;
+}
+
+.cart-quantity button:hover {
+  background: #f0e2c5;
+}
+
+.cart-quantity span {
+  min-width: 32px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.cart-product-total {
+  color: #a87318;
+  font-size: 15px;
+}
+
+.cart-remove {
+  border: none;
+  background: transparent;
+  color: #92785a;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.cart-remove:hover {
+  color: #a23b2b;
+}
+
+.cart-shopping-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.cart-secondary-button,
+.cart-clear-button {
+  padding: 12px 16px;
+  border: 1px solid #d8c49c;
+  border-radius: 4px;
+  background: #fff;
+  color: #805514;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.cart-clear-button {
+  cursor: pointer;
+}
+
+.cart-secondary-button:hover,
+.cart-clear-button:hover {
+  background: #f7efdf;
+}
+
+.cart-summary {
+  padding: 25px;
+  background: #fbf8f1;
+  border: 1px solid #e9dfcc;
+  border-radius: 6px;
+}
+
+.cart-summary-top {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e9dfcc;
+}
+
+.cart-summary-label {
+  color: #a87318;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.cart-summary h2 {
+  margin: 8px 0 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+}
+
+.cart-summary-line,
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  color: #756d61;
+  font-size: 13px;
+}
+
+.cart-summary-line strong {
+  color: #211b13;
+}
+
+.cart-free {
+  color: #6d873d;
+}
+
+.cart-summary-divider {
+  height: 1px;
+  background: #e0d0ad;
+}
+
+.cart-total-row {
+  color: #211b13;
+  font-weight: 600;
+}
+
+.cart-total-row strong {
+  color: #a87318;
+  font-size: 23px;
+}
+
+.cart-checkout-button {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #b78324;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #c99a3b, #a87318);
+  color: white;
+  font-weight: 700;
+}
+
+.cart-checkout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px #b7832433;
+}
+
+.cart-secure-text {
+  margin: 15px 0 0;
+  color: #756d61;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.cart-empty-content {
+  padding: 35px 15px;
+  text-align: center;
+}
+
+.cart-empty-icon {
+  font-size: 42px;
+  color: #b78324;
+}
+
+.cart-empty-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+}
+
+.cart-empty-content p {
+  color: #756d61;
+  line-height: 1.8;
+}
+
+.cart-primary-button {
+  display: inline-flex;
+  margin-top: 15px;
+  padding: 14px 24px;
+  text-decoration: none;
+}
+
+.cart-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 35px 0 15px;
+  color: #b78324;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.cart-divider::before,
+.cart-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #e9dfcc;
+}
+
+.cart-footer-text {
+  color: #756d61;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+}
+
+@media (max-width: 900px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-page {
+    padding: 22px 12px 40px;
+  }
+
+  .cart-main-card,
+  .cart-empty-card {
+    padding: 22px 15px;
+  }
+
+  .cart-product {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .cart-product-image {
+    width: 82px;
+    height: 95px;
+  }
+
+  .cart-product-info h2 {
+    font-size: 21px;
+  }
+
+  .cart-product-actions {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .cart-shopping-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cart-secondary-button,
+  .cart-clear-button {
+    text-align: center;
+  }
+}
+
+/* =================================
+   ROYAL CHECKOUT
+================================= */
+
+.checkout-page {
+  min-height: 75vh;
+  padding: 45px 18px 70px;
+  background: #fbf8f1;
+  color: #211b13;
+}
+
+.checkout-card {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 48px);
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #eee5d6;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px rgba(92, 66, 25, 0.07);
+}
+
+.checkout-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.checkout-label {
+  color: #b78324;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.checkout-header h1,
+.checkout-card > h1 {
+  margin: 12px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 54px);
+  font-weight: 600;
+}
+
+.checkout-header > p:last-child,
+.checkout-card > p {
+  color: #756d61;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.checkout-summary {
+  margin-bottom: 30px;
+  padding: 22px;
+  background: #fbf8f1;
+  border: 1px solid #e9dfcc;
+  border-radius: 6px;
+}
+
+.checkout-summary h2,
+.checkout-form h2 {
+  margin: 0 0 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 13px 0;
+  border-bottom: 1px solid #e9dfcc;
+  font-size: 13px;
+}
+
+.checkout-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkout-item-info small {
+  color: #756d61;
+}
+
+.checkout-item > strong {
+  color: #a87318;
+  white-space: nowrap;
+}
+
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+  font-weight: 600;
+}
+
+.checkout-total strong {
+  color: #a87318;
+  font-size: 23px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkout-form label {
+  margin-top: 10px;
+  color: #554839;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.checkout-form input {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  border: 1px solid #e3d7c1;
+  border-radius: 4px;
+  background: #fffefa;
+  color: #211b13;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.checkout-form input::placeholder {
+  color: #a79a87;
+}
+
+.checkout-form input:focus {
+  outline: none;
+  border-color: #b78324;
+  box-shadow: 0 0 0 3px rgba(183, 131, 36, 0.12);
+}
+
+.checkout-address-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.checkout-address-row > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkout-button {
+  min-height: 50px;
+  margin-top: 18px;
+  padding: 14px 20px;
+  border: 1px solid #b78324;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #c99a3b, #a87318);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.checkout-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(160, 112, 27, 0.2);
+}
+
+.checkout-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.checkout-back {
+  display: block;
+  margin-top: 16px;
+  color: #805514;
+  text-align: center;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.checkout-back:hover {
+  color: #b78324;
+}
+
+.checkout-error {
+  padding: 13px 15px;
+  border: 1px solid #e7b9b1;
+  border-radius: 4px;
+  background: #fff4f2;
+  color: #9a3026;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.checkout-note {
+  margin-top: 24px;
+  color: #827767;
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.checkout-divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 30px;
+  color: #b78324;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.checkout-divider::before,
+.checkout-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e9dfcc;
+}
+
+.checkout-footer-text {
+  color: #756d61;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .checkout-page {
+    padding: 22px 12px 40px;
+  }
+
+  .checkout-card {
+    padding: 24px 17px;
+  }
+
+  .checkout-summary {
+    padding: 16px;
+  }
+
+  .checkout-address-row {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .checkout-total strong {
+    font-size: 20px;
+  }
+}
+
+/* =================================
+   ROYAL ORDER SUCCESS
+================================= */
+
+.order-success-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 18px 70px;
+  background: #fbf8f1;
+  color: #211b13;
+}
+
+.order-success-card {
+  width: 100%;
+  max-width: 680px;
+  padding: clamp(25px, 5vw, 50px);
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #e9dfcc;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px rgba(92, 66, 25, 0.08);
+  text-align: center;
+}
+
+.order-success-icon {
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  border: 1px solid #d7b66c;
+  border-radius: 50%;
+  color: #b78324;
+  font-size: 36px;
+}
+
+.order-success-label {
+  color: #b78324;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.order-success-card h1 {
+  margin: 15px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 600;
+}
+
+.order-success-description {
+  max-width: 470px;
+  margin: 0 auto 30px;
+  color: #756d61;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.order-success-details {
+  margin: 25px 0;
+  padding: 22px;
+  background: #fbf8f1;
+  border: 1px solid #e9dfcc;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.order-success-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 13px 0;
+  border-bottom: 1px solid #e9dfcc;
+  font-size: 13px;
+}
+
+.order-success-row:last-child {
+  border-bottom: none;
+}
+
+.order-success-row span {
+  color: #756d61;
+}
+
+.order-success-row strong {
+  max-width: 60%;
+  color: #211b13;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.order-success-total {
+  color: #a87318 !important;
+  font-size: 21px;
+}
+
+.order-success-status {
+  color: #8a641d !important;
+}
+
+.order-success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.order-success-primary,
+.order-success-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.order-success-primary {
+  border: 1px solid #b78324;
+  background: linear-gradient(135deg, #c99a3b, #a87318);
+  color: #fff;
+}
+
+.order-success-secondary {
+  border: 1px solid #d8c8a9;
+  background: #fff;
+  color: #805514;
+}
+
+.order-success-primary:hover,
+.order-success-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(92, 66, 25, 0.12);
+}
+
+.order-success-footer {
+  margin-top: 30px;
+  color: #756d61;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+}
+
+@media (max-width: 480px) {
+  .order-success-page {
+    padding: 25px 12px 40px;
+  }
+
+  .order-success-details {
+    padding: 15px;
+  }
+
+  .order-success-actions {
+    flex-direction: column;
+  }
+
+  .order-success-primary,
+  .order-success-secondary {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* =================================
+   ROYAL MY ORDERS
+================================= */
+
+.orders-page {
+  min-height: 70vh;
+  padding: 45px 18px 70px;
+  background: #fbf8f1;
+  color: #211b13;
+}
+
+.orders-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.orders-header {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.orders-label {
+  color: #b78324;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.orders-header h1 {
+  margin: 12px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 50px);
+  font-weight: 600;
+}
+
+.orders-header p {
+  color: #756d61;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.order-card {
+  padding: clamp(18px, 3vw, 30px);
+  background: #fff;
+  border: 1px solid #e9dfcc;
+  border-radius: 7px;
+  box-shadow: 0 8px 25px rgba(92, 66, 25, 0.05);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(92, 66, 25, 0.09);
+}
+
+.order-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9dfcc;
+}
+
+.order-number {
+  color: #211b13;
+  font-size: 14px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.order-date {
+  margin-top: 7px;
+  color: #756d61;
+  font-size: 12px;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid #e4d2a9;
+  border-radius: 30px;
+  background: #fbf5e7;
+  color: #8a641d;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px 0;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.order-item-image {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  object-fit: contain;
+  padding: 5px;
+  box-sizing: border-box;
+  background: #fbf8f1;
+  border: 1px solid #eee5d6;
+  border-radius: 5px;
+}
+
+.order-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.order-item-info h3 {
+  margin: 0 0 7px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.order-item-info p {
+  margin: 0;
+  color: #756d61;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.order-item-price {
+  color: #a87318;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.order-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid #e9dfcc;
+}
+
+.order-total-label {
+  color: #756d61;
+  font-size: 13px;
+}
+
+.order-total-price {
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.orders-empty,
+.orders-loading,
+.orders-error {
+  padding: 40px 22px;
+  background: #fff;
+  border: 1px solid #e9dfcc;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.orders-empty h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+}
+
+.orders-empty p,
+.orders-loading p {
+  color: #756d61;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.orders-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 13px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.orders-error {
+  color: #9a3026;
+  line-height: 1.8;
+}
+
+@media (max-width: 560px) {
+  .orders-page {
+    padding: 25px 12px 45px;
+  }
+
+  .order-card-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .order-item {
+    flex-wrap: wrap;
+  }
+
+  .order-item-image {
+    width: 65px;
+    height: 65px;
+  }
+
+  .order-item-info h3 {
+    font-size: 18px;
+  }
+
+  .order-card-footer {
+    align-items: flex-start;
+  }
+}
+
+/* =================================
+   CHRONOS ATELIER — ROYAL NAVBAR
+================================= */
+
+.navbar {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  width: 100%;
+  padding: 20px clamp(18px, 5vw, 70px);
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid #e9dfcc;
+  box-shadow: 0 4px 20px rgba(92, 66, 25, 0.04);
+}
+
+.navbar .logo {
+  flex-shrink: 0;
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(23px, 3vw, 31px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.navbar .logo:hover {
+  color: #c99a3b;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 27px);
+}
+
+.navbar .nav-links a {
+  position: relative;
+  padding: 8px 0;
+  color: #43382a;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.navbar .nav-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: #b78324;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: #b78324;
+}
+
+.navbar .nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .logout-button {
+  padding: 10px 16px;
+  border: 1px solid #b78324;
+  border-radius: 4px;
+  background: transparent;
+  color: #956617;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.navbar .logout-button:hover {
+  background: #b78324;
+  color: #fff;
+}
+
+/* Responsive Navbar */
+
+@media (max-width: 900px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    padding: 18px 22px;
+  }
+
+  .navbar .nav-links {
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 16px;
+  }
+
+  .navbar .nav-links {
+    gap: 8px 16px;
+  }
+
+  .navbar .nav-links a {
+    font-size: 11px;
+  }
+
+  .navbar .logout-button {
+    padding: 8px 12px;
+  }
+}
+
+/* =================================
+   CHRONOS ATELIER — ROYAL FOOTER
+================================= */
+
+.footer {
+  position: relative;
+  margin-top: 60px;
+  padding: 55px clamp(20px, 6vw, 80px) 22px;
+  background: #fff;
+  color: #43382a;
+  border-top: 1px solid #e9dfcc;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 45px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand h2 {
+  margin: 0 0 15px;
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-brand p {
+  max-width: 330px;
+  color: #756d61;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.footer-column h3 {
+  margin: 5px 0 20px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.footer-column a {
+  display: block;
+  width: fit-content;
+  margin-bottom: 13px;
+  color: #756d61;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-column a:hover {
+  color: #b78324;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-top: 22px;
+  border-top: 1px solid #e9dfcc;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #8b8071;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.footer-bottom span {
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+}
+
+@media (max-width: 760px) {
+  .footer {
+    margin-top: 35px;
+    padding-top: 38px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+}
+
+/* =================================
+   ROYAL FOOTER — FINAL DESIGN
+================================= */
+
+.footer {
+  margin-top: 60px;
+  padding: 55px clamp(20px, 5vw, 70px) 22px;
+  background: #fff;
+  border-top: 1px solid #e9dfcc;
+  color: #43382a;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 35px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: inline-block;
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 31px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.footer-tagline {
+  margin: 15px 0;
+  color: #756d61;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.footer-brand-line {
+  width: 55px;
+  height: 2px;
+  margin: 20px 0;
+  background: linear-gradient(90deg, #a87318, #e4c477);
+}
+
+.footer-home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  color: #956617;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-home-button:hover {
+  color: #c99a3b;
+}
+
+.footer-home-button span {
+  font-size: 17px;
+  transition: transform 0.25s ease;
+}
+
+.footer-home-button:hover span {
+  transform: translateX(4px);
+}
+
+.footer-column h3 {
+  margin: 5px 0 22px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.footer-links a {
+  display: block;
+  width: fit-content;
+  margin-bottom: 14px;
+  color: #756d61;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #b78324;
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px 25px;
+  max-width: 1250px;
+  margin: 42px auto 0;
+  padding-top: 22px;
+  border-top: 1px solid #e9dfcc;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #8b8071;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.footer-bottom-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-bottom-links a {
+  color: #756d61;
+  font-size: 11px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #b78324;
+}
+
+.footer-bottom-links span {
+  color: #c5a565;
+  font-size: 11px;
+}
+
+.footer-bottom .footer-signature {
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 25px;
+  }
+
+  .footer-bottom .footer-signature {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    margin-top: 35px;
+    padding: 35px 20px 22px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-logo {
+    font-size: 28px;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 15px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+}
+
+/* =========================================
+   CHRONOS ATELIER — ROYAL IVORY & GOLD
+========================================= */
+
+:root {
+  --royal-bg: #fbf8f1;
+  --royal-card: #fffdf8;
+  --royal-gold: #b78324;
+  --royal-gold-light: #e4c477;
+  --royal-text: #211b13;
+  --royal-muted: #756d61;
+  --royal-border: #e9dfcc;
+}
+
+body {
+  background: var(--royal-bg);
+  color: var(--royal-text);
+}
+
+/* Navigation */
+
+.navbar {
+  background: rgba(255, 253, 248, 0.97);
+  border-bottom: 1px solid var(--royal-border);
+  box-shadow: 0 4px 20px rgba(92, 66, 25, 0.05);
+}
+
+.navbar .logo,
+.footer-logo {
+  color: var(--royal-gold);
+}
+
+.navbar .nav-links a {
+  color: var(--royal-text);
+}
+
+.navbar .nav-links a:hover {
+  color: var(--royal-gold);
+}
+
+/* Shared page backgrounds */
+
+.contact-page,
+.profile-page,
+.orders-page,
+.checkout-page,
+.order-success-page,
+.auth-page {
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgba(228, 196, 119, 0.12),
+      transparent 60%
+    ),
+    var(--royal-bg);
+  color: var(--royal-text);
+}
+
+/* Shared cards */
+
+.contact-container,
+.contact-card,
+.profile-container,
+.profile-card,
+.orders-container,
+.order-card,
+.checkout-card,
+.order-success-card,
+.auth-container,
+.auth-card {
+  background: rgba(255, 253, 248, 0.98);
+  border: 1px solid var(--royal-border);
+  border-radius: 9px;
+  box-shadow: 0 12px 35px rgba(92, 66, 25, 0.07);
+}
+
+/* Headings */
+
+.contact-page h1,
+.profile-page h1,
+.orders-page h1,
+.checkout-page h1,
+.order-success-page h1,
+.auth-page h1 {
+  color: var(--royal-text);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Secondary text */
+
+.contact-page p,
+.profile-page p,
+.orders-page p,
+.checkout-page p,
+.order-success-page p,
+.auth-page p {
+  color: var(--royal-muted);
+}
+
+/* Form fields */
+
+.contact-page input,
+.contact-page textarea,
+.checkout-page input,
+.auth-page input {
+  background: #fffefa;
+  color: var(--royal-text);
+  border: 1px solid #e3d7c1;
+  border-radius: 5px;
+}
+
+.contact-page input::placeholder,
+.contact-page textarea::placeholder,
+.checkout-page input::placeholder,
+.auth-page input::placeholder {
+  color: #a79a87;
+}
+
+.contact-page input:focus,
+.contact-page textarea:focus,
+.checkout-page input:focus,
+.auth-page input:focus {
+  outline: none;
+  border-color: var(--royal-gold);
+  box-shadow: 0 0 0 3px rgba(183, 131, 36, 0.1);
+}
+
+/* Gold buttons */
+
+.contact-page button,
+.checkout-button,
+.order-success-primary,
+.orders-button,
+.profile-button,
+.auth-page button {
+  background: linear-gradient(
+    135deg,
+    #c99a3b,
+    #e4c477,
+    #b78324
+  );
+  color: #fffdf8;
+  border: 1px solid #bd8b2d;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* Order details */
+
+.order-status {
+  background: #fbf5e7;
+  color: #8a641d;
+  border: 1px solid #e4d2a9;
+}
+
+.order-total-price,
+.order-item-price,
+.order-success-total {
+  color: var(--royal-gold);
+}
+
+/* Footer */
+
+.footer {
+  background: #fffdf8;
+  color: var(--royal-text);
+  border-top: 1px solid var(--royal-border);
+}
+
+.footer-column h3 {
+  color: var(--royal-text);
+}
+
+.footer-links a,
+.footer-tagline,
+.footer-bottom p {
+  color: var(--royal-muted);
+}
+
+/* =========================================
+   CHRONOS ATELIER — IVORY GOLD CART
+========================================= */
+
+.cart-page {
+  min-height: 75vh;
+  padding: 45px 20px 70px;
+  background:
+    radial-gradient(ellipse at top, #fffdf7 0%, #fbf7ed 70%);
+  color: #211b13;
+}
+
+.cart-background {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cart-main-card {
+  padding: clamp(20px, 4vw, 42px);
+  background: rgba(255, 253, 248, 0.95);
+  border: 1px solid #e8d8b7;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(126, 91, 32, 0.08);
+}
+
+.cart-header {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.cart-header h1 {
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 52px);
+  font-weight: 600;
+}
+
+.cart-header p {
+  color: #756d61;
+  font-size: 14px;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(270px, 0.8fr);
+  align-items: start;
+  gap: 28px;
+}
+
+.cart-products {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #fffefa;
+  border: 1px solid #eadfc9;
+  border-radius: 7px;
+}
+
+.cart-product-image {
+  width: 100px;
+  height: 110px;
+  flex-shrink: 0;
+  object-fit: contain;
+  padding: 8px;
+  background: #fbf8f1;
+  border: 1px solid #eee4d1;
+  border-radius: 5px;
+}
+
+.cart-product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-product-info h3 {
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+}
+
+.cart-product-info p {
+  color: #756d61;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.cart-product-category {
+  color: #a87318;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.cart-product-total {
+  color: #a87318;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px;
+  border: 1px solid #dfc995;
+  border-radius: 5px;
+  color: #211b13;
+}
+
+.cart-quantity button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #dfc995;
+  border-radius: 4px;
+  background: #fffdf8;
+  color: #956617;
+  cursor: pointer;
+}
+
+.cart-quantity button:hover {
+  background: #f5ead1;
+}
+
+.cart-remove {
+  border: none;
+  background: transparent;
+  color: #9b6c25;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  position: sticky;
+  top: 20px;
+  padding: 25px;
+  background: #fffefa;
+  border: 1px solid #e8d8b7;
+  border-radius: 7px;
+  box-shadow: 0 8px 25px rgba(126, 91, 32, 0.05);
+}
+
+.cart-summary h2 {
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+}
+
+.cart-summary-line,
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee4d1;
+  font-size: 13px;
+}
+
+.cart-summary-label {
+  color: #756d61;
+}
+
+.cart-total-row {
+  margin-top: 10px;
+  border-bottom: none;
+  font-weight: 600;
+}
+
+.cart-total-row strong {
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+}
+
+.cart-checkout-button,
+.cart-primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 13px 18px;
+  box-sizing: border-box;
+  border: 1px solid #bd8b2d;
+  border-radius: 5px;
+  background: linear-gradient(120deg, #c99a3b, #e4c477, #b78324);
+  color: #fffdf8;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.cart-checkout-button:hover,
+.cart-primary-button:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.cart-secondary-button,
+.cart-clear-button {
+  padding: 11px 15px;
+  border: 1px solid #d9c69e;
+  border-radius: 5px;
+  background: transparent;
+  color: #805514;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.cart-empty-card {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 50px 25px;
+  background: #fffefa;
+  border: 1px solid #e8d8b7;
+  border-radius: 10px;
+  box-shadow: 0 12px 35px rgba(126, 91, 32, 0.07);
+  text-align: center;
+}
+
+.cart-empty-card h1,
+.cart-empty-card h2 {
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+}
+
+.cart-empty-card p {
+  color: #756d61;
+  line-height: 1.8;
+}
+
+@media (max-width: 800px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 520px) {
+  .cart-page {
+    padding: 25px 12px 40px;
+  }
+
+  .cart-product {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .cart-product-image {
+    width: 75px;
+    height: 85px;
+  }
+
+  .cart-product-info h3 {
+    font-size: 20px;
+  }
+
+  .cart-summary {
+    padding: 18px;
+  }
+}
+
+/* =========================================
+   CHRONOS ATELIER — ROYAL HOME
+========================================= */
+
+.home-luxury {
+  overflow: hidden;
+  background: #fbf8f1;
+  color: #211b13;
+}
+
+.home-luxury-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+  min-height: 500px;
+  padding: 55px clamp(24px, 7vw, 100px);
+  background:
+    radial-gradient(ellipse at 75% 50%, #fff 0%, transparent 60%),
+    linear-gradient(120deg, #fffdf8, #f7efdF);
+  border-bottom: 1px solid #e9dfcc;
+}
+
+.home-luxury-copy {
+  max-width: 570px;
+}
+
+.home-luxury-eyebrow {
+  margin: 0 0 20px;
+  color: #a87318;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.home-luxury-copy h1,
+.home-luxury-story h2,
+.home-luxury-collection h2 {
+  margin: 0 0 22px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+.home-luxury-description {
+  max-width: 450px;
+  margin-bottom: 28px;
+  color: #756d61;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.home-luxury-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.home-luxury-primary,
+.home-luxury-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 45px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-luxury-primary {
+  border: 1px solid #bd8b2d;
+  background: linear-gradient(120deg, #c99a3b, #e4c477, #b78324);
+  color: #fffdf8;
+  box-shadow: 0 5px 15px rgba(160, 112, 27, 0.12);
+}
+
+.home-luxury-outline {
+  border: 1px solid #c99a3b;
+  background: rgba(255, 253, 248, 0.8);
+  color: #956617;
+}
+
+.home-luxury-primary:hover,
+.home-luxury-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(160, 112, 27, 0.15);
+}
+
+.home-luxury-image {
+  position: relative;
+  min-width: 0;
+}
+
+.home-luxury-image img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: contain;
+  padding: 12px;
+  box-sizing: border-box;
+  background: #fffdf8;
+  border: 1px solid #e9dfcc;
+  border-radius: 8px;
+}
+
+.home-luxury-image-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.home-luxury-image-caption span:first-child {
+  color: #a87318;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.home-luxury-image-caption span:last-child {
+  color: #756d61;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+}
+
+.home-luxury-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  padding: 25px clamp(20px, 5vw, 70px);
+  background: #fffdf8;
+  border-bottom: 1px solid #e9dfcc;
+}
+
+.home-luxury-benefit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.home-luxury-benefit > span {
+  color: #b78324;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+}
+
+.home-luxury-benefit h3 {
+  margin: 0 0 5px;
+  color: #30271c;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+}
+
+.home-luxury-benefit p {
+  margin: 0;
+  color: #756d61;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.home-luxury-story {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 55px;
+  padding: 75px clamp(24px, 8vw, 110px);
+}
+
+.home-luxury-story h2 {
+  font-size: clamp(34px, 4vw, 48px);
+}
+
+.home-luxury-story-copy > p:not(.home-luxury-eyebrow) {
+  color: #756d61;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.home-luxury-text-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #956617;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-luxury-text-link:hover {
+  color: #b78324;
+}
+
+.home-luxury-story-image {
+  padding: 10px;
+  background: #fffdf8;
+  border: 1px solid #dfc58d;
+  border-radius: 7px;
+  box-shadow: 0 12px 30px rgba(92, 66, 25, 0.08);
+}
+
+.home-luxury-story-image img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.home-luxury-collection {
+  padding: 65px 20px;
+  background: linear-gradient(135deg, #f5ead1, #fffdf8, #f5ead1);
+  border-top: 1px solid #e9dfcc;
+  text-align: center;
+}
+
+.home-luxury-collection h2 {
+  font-size: clamp(32px, 4vw, 45px);
+}
+
+.home-luxury-collection > p:not(.home-luxury-eyebrow) {
+  margin: 0 auto 25px;
+  color: #756d61;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media (max-width: 850px) {
+  .home-luxury-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 45px 25px;
+  }
+
+  .home-luxury-image img {
+    height: 330px;
+  }
+
+  .home-luxury-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-luxury-story {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 50px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-luxury-hero {
+    padding: 35px 18px;
+  }
+
+  .home-luxury-copy h1 {
+    font-size: 39px;
+  }
+
+  .home-luxury-benefits {
+    gap: 22px 10px;
+    padding: 22px 14px;
+  }
+
+  .home-luxury-benefit {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .home-luxury-benefit > span {
+    font-size: 24px;
+  }
+
+  .home-luxury-benefit h3 {
+    font-size: 16px;
+  }
+
+  .home-luxury-image img {
+    height: 260px;
+  }
+
+  .home-luxury-story-image img {
+    height: 240px;
+  }
+}
+
+/* =========================================
+   CHRONOS ATELIER — ROYAL ABOUT PAGE
+========================================= */
+
+.about-page {
+  overflow: hidden;
+  background: #fbf8f1;
+  color: #211b13;
+}
+
+.about-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 330px;
+  padding: 60px 24px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(ellipse at 15% 50%, rgba(228, 196, 119, 0.2), transparent 40%),
+    radial-gradient(ellipse at 85% 50%, rgba(228, 196, 119, 0.16), transparent 40%),
+    linear-gradient(135deg, #fffdf8, #f5ecd8, #fffdf8);
+  border-bottom: 1px solid #e9dfcc;
+  text-align: center;
+}
+
+.about-hero::before,
+.about-hero::after {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(183, 131, 36, 0.25);
+  content: "";
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.about-hero::before {
+  top: -65px;
+  left: -45px;
+}
+
+.about-hero::after {
+  right: -45px;
+  bottom: -65px;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+}
+
+.about-label,
+.about-section-label {
+  margin: 0 0 17px;
+  color: #a87318;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.about-hero h1 {
+  margin: 0;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 7vw, 76px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.about-line {
+  width: 60px;
+  height: 2px;
+  margin: 22px auto;
+  background: linear-gradient(90deg, #b78324, #e4c477);
+}
+
+.about-hero-content > p:last-child {
+  margin: 0;
+  color: #756d61;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* STORY */
+
+.about-story {
+  padding: 85px clamp(22px, 8vw, 110px);
+  background: #fffdf8;
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: clamp(35px, 6vw, 80px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-story-content h2 {
+  margin: 0 0 25px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.about-story-content > p:not(.about-section-label) {
+  margin: 0 0 16px;
+  color: #756d61;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.about-story-image {
+  position: relative;
+  padding: 12px;
+  background: linear-gradient(135deg, #e4c477, #fffdf8, #b78324);
+  border-radius: 7px;
+  box-shadow: 0 15px 35px rgba(92, 66, 25, 0.1);
+}
+
+.about-story-image img {
+  display: block;
+  width: 100%;
+  height: 390px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #e9dfcc;
+  border-radius: 4px;
+}
+
+/* VALUES */
+
+.about-values {
+  padding: 75px clamp(20px, 6vw, 75px);
+  background: linear-gradient(135deg, #f7efdF, #fffdf8, #f7efdF);
+  border-top: 1px solid #e9dfcc;
+  border-bottom: 1px solid #e9dfcc;
+}
+
+.about-values-header {
+  margin-bottom: 38px;
+  text-align: center;
+}
+
+.about-values-header h2 {
+  margin: 0;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 4vw, 46px);
+  font-weight: 600;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.about-value-card {
+  padding: 32px 25px;
+  background: rgba(255, 253, 248, 0.92);
+  border: 1px solid #e5d4ae;
+  border-radius: 7px;
+  box-shadow: 0 8px 24px rgba(92, 66, 25, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(92, 66, 25, 0.09);
+}
+
+.about-value-card > span {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #b78324;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 35px;
+}
+
+.about-value-card h3 {
+  margin: 0 0 12px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.about-value-card p {
+  margin: 0;
+  color: #756d61;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* QUOTE */
+
+.about-quote {
+  padding: 75px 20px;
+  background:
+    radial-gradient(ellipse at center, #fffdf8, #f4e8ce);
+  border-bottom: 1px solid #e9dfcc;
+  text-align: center;
+}
+
+.about-quote-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-quote-mark {
+  height: 45px;
+  color: #b78324;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 75px;
+  line-height: 1;
+}
+
+.about-quote h2 {
+  margin: 20px 0;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 6vw, 60px);
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.about-quote-content > p {
+  margin: 25px 0 0;
+  color: #a87318;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+/* CALL TO ACTION */
+
+.about-cta {
+  padding: 75px 20px;
+  background: #fffdf8;
+  text-align: center;
+}
+
+.about-cta h2 {
+  margin: 0 0 28px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.about-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 25px;
+  border: 1px solid #bd8b2d;
+  border-radius: 4px;
+  background: linear-gradient(120deg, #c99a3b, #e4c477, #b78324);
+  color: #fffdf8;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(160, 112, 27, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(160, 112, 27, 0.18);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 760px) {
+  .about-hero {
+    min-height: 280px;
+    padding: 45px 20px;
+  }
+
+  .about-story {
+    padding: 55px 22px;
+  }
+
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-story-image img {
+    height: 300px;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-value-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 48px;
+  }
+
+  .about-label,
+  .about-section-label {
+    letter-spacing: 3px;
+  }
+
+  .about-story-content h2 {
+    font-size: 37px;
+  }
+
+  .about-story-image img {
+    height: 240px;
+  }
+
+  .about-quote {
+    padding: 55px 18px;
+  }
+
+  .about-cta {
+    padding: 55px 18px;
+  }
+}
+
+/* =========================================
+   CHRONOS ATELIER — ROYAL PRODUCTS
+========================================= */
+
+.products-page {
+  min-height: 75vh;
+  padding: 45px clamp(12px, 3vw, 35px) 70px;
+  background:
+    radial-gradient(ellipse at top, #fffdf8, transparent 65%),
+    #fbf8f1;
+  color: #211b13;
+}
+
+.products-background {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.products-card {
+  padding: clamp(20px, 4vw, 45px);
+  background: rgba(255, 253, 248, 0.96);
+  border: 1px solid #e5d4ae;
+  border-radius: 10px;
+  box-shadow: 0 14px 40px rgba(92, 66, 25, 0.07);
+}
+
+.products-header {
+  max-width: 720px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.products-label {
+  margin: 0 0 15px;
+  color: #a87318;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.products-header h1,
+.products-status h1 {
+  margin: 0 0 20px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 600;
+}
+
+.products-description {
+  max-width: 570px;
+  margin: 0 auto;
+  color: #756d61;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.products-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 15px 0;
+  border-top: 1px solid #e9dfcc;
+  border-bottom: 1px solid #e9dfcc;
+  color: #8b7043;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+/* Product status: loading and error */
+
+.products-status {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 55px 25px;
+  text-align: center;
+}
+
+.products-status > p:last-child {
+  color: #756d61;
+  font-size: 13px;
+}
+
+.products-loader {
+  width: 38px;
+  height: 38px;
+  margin: 25px auto;
+  border: 3px solid #eee3cb;
+  border-top-color: #b78324;
+  border-radius: 50%;
+  animation: productsRoyalSpin 0.9s linear infinite;
+}
+
+@keyframes productsRoyalSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.products-error {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #e8c5b9;
+  border-radius: 5px;
+  background: #fff6f2;
+  color: #913f2d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.products-divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 500px;
+  margin: 45px auto 18px;
+  color: #b78324;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.products-divider::before,
+.products-divider::after {
+  flex: 1;
+  height: 1px;
+  background: #e5d4ae;
+  content: "";
+}
+
+.products-footer-text {
+  margin: 0;
+  color: #756d61;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Product cards */
+
+.products-grid .product-card {
+  overflow: hidden;
+  background: #fffefa;
+  border: 1px solid #e9dfcc;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(92, 66, 25, 0.045);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.products-grid .product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(92, 66, 25, 0.11);
+}
+
+.products-grid .product-card img {
+  max-width: 100%;
+}
+
+.products-grid .product-card h2,
+.products-grid .product-card h3 {
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.products-grid .product-card p {
+  color: #756d61;
+  line-height: 1.8;
+}
+
+.products-grid .product-card button {
+  border: 1px solid #bd8b2d;
+  border-radius: 4px;
+  background: linear-gradient(120deg, #c99a3b, #e4c477, #b78324);
+  color: #fffdf8;
+  font-weight: 600;
+  transition: filter 0.25s ease;
+}
+
+.products-grid .product-card button:hover {
+  filter: brightness(1.06);
+}
+
+@media (max-width: 950px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  .products-page {
+    padding: 25px 12px 40px;
+  }
+
+  .products-card {
+    padding: 20px 14px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .products-line {
+    font-size: 10px;
+  }
+
+  .products-header h1 {
+    font-size: 39px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .products-loader {
+    animation: none;
+  }
+
+  .products-grid .product-card {
+    transition: none;
+  }
+}
+
+/* =========================================
+   CHRONOS ATELIER — LUXURY PRODUCT CARDS
+========================================= */
+
+.products-grid .product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  background: #fffefa;
+  border: 1px solid #e5d4ae;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(92, 66, 25, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products-grid .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(92, 66, 25, 0.12);
+  border-color: #c9a454;
+}
+
+/* Watch image area */
+
+.products-grid .product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 285px;
+  padding: 20px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at center, #ffffff 0%, #fbf7ed 100%);
+  border-bottom: 1px solid #eee4d1;
+}
+
+.products-grid .product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.products-grid .product-card:hover .product-image img {
+  transform: scale(1.035);
+}
+
+/* Product information */
+
+.products-grid .product-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px;
+}
+
+.products-grid .product-category {
+  margin-bottom: 9px;
+  color: #a87318;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.products-grid .product-info h3 {
+  margin: 0 0 12px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.products-grid .product-info p {
+  margin: 0 0 22px;
+  color: #756d61;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* Price and details */
+
+.products-grid .product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #eee4d1;
+}
+
+.products-grid .product-price {
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.products-grid .product-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  border: 1px solid #bd8b2d;
+  border-radius: 4px;
+  background: linear-gradient(120deg, #c99a3b, #e4c477, #b78324);
+  color: #fffdf8;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.products-grid .product-button:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+/* Responsive product cards */
+
+@media (max-width: 560px) {
+  .products-grid .product-image {
+    height: 260px;
+  }
+
+  .products-grid .product-info {
+    padding: 18px;
+  }
+
+  .products-grid .product-info h3 {
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .products-grid .product-card,
+  .products-grid .product-image img,
+  .products-grid .product-button {
+    transition: none;
+  }
+}
+
+/* =========================================
+   CHRONOS ATELIER — ROYAL ORDERS
+========================================= */
+
+.orders-page {
+  min-height: 75vh;
+  padding: 45px clamp(14px, 4vw, 55px) 75px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(ellipse at top, #fffdf8, transparent 65%),
+    #fbf8f1;
+  color: #211b13;
+}
+
+.orders-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 45px);
+  box-sizing: border-box;
+  background: rgba(255, 253, 248, 0.97);
+  border: 1px solid #e5d4ae;
+  border-radius: 10px;
+  box-shadow: 0 14px 40px rgba(92, 66, 25, 0.07);
+}
+
+.orders-header {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.orders-label {
+  margin: 0 0 15px;
+  color: #a87318;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.orders-header h1 {
+  margin: 0 0 15px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 54px);
+  font-weight: 600;
+}
+
+.orders-header p {
+  color: #756d61;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-card {
+  padding: clamp(18px, 3vw, 28px);
+  background: #fffefa;
+  border: 1px solid #e5d4ae;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(92, 66, 25, 0.045);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.order-card:hover {
+  border-color: #c9a454;
+  box-shadow: 0 12px 28px rgba(92, 66, 25, 0.09);
+}
+
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee4d1;
+}
+
+.order-number {
+  color: #a87318;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.order-date {
+  margin-top: 9px;
+  color: #756d61;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.order-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 180px;
+  padding: 9px 13px;
+  border: 1px solid #dfc995;
+  border-radius: 30px;
+  background: #fbf5e7;
+  color: #8a641d;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px 0;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+
+.order-item-image {
+  display: block;
+  width: 82px;
+  height: 88px;
+  padding: 6px;
+  box-sizing: border-box;
+  object-fit: contain;
+  background: #fbf8f1;
+  border: 1px solid #eee4d1;
+  border-radius: 5px;
+}
+
+.order-item-info {
+  min-width: 0;
+}
+
+.order-item-info h3 {
+  margin: 0 0 8px;
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.order-item-info p {
+  margin: 0;
+  color: #756d61;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.order-item-price {
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.order-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding-top: 20px;
+  border-top: 1px solid #eee4d1;
+}
+
+.order-total-label {
+  color: #756d61;
+  font-size: 12px;
+}
+
+.order-total-price {
+  color: #a87318;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.orders-empty,
+.orders-loading,
+.orders-error {
+  padding: 40px 24px;
+  background: #fffefa;
+  border: 1px solid #e5d4ae;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.orders-empty h2 {
+  color: #211b13;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+}
+
+.orders-empty p,
+.orders-loading p {
+  color: #756d61;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.orders-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 13px 22px;
+  border: 1px solid #bd8b2d;
+  border-radius: 5px;
+  background: linear-gradient(120deg, #c99a3b, #e4c477, #b78324);
+  color: #fffdf8;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.orders-error {
+  color: #913f2d;
+  line-height: 1.8;
+}
+
+@media (max-width: 650px) {
+  .orders-page {
+    padding: 25px 12px 45px;
+  }
+
+  .orders-container {
+    padding: 20px 14px;
+  }
+
+  .order-item {
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .order-item-image {
+    width: 65px;
+    height: 70px;
+  }
+
+  .order-item-price {
+    grid-column: 2;
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .order-item-info h3 {
+    font-size: 20px;
+  }
+
+  .order-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* ==========================================
+   CHRONOS ATELIER — ORDERS IVORY & GOLD
+   Final override
+========================================== */
+
+.orders-page {
+  width: 100%;
+  min-height: 80vh;
+  padding: 45px 20px 70px;
+  box-sizing: border-box;
+  background: #fbf8f1 !important;
+  color: #211b13 !important;
+}
+
+.orders-background {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: transparent !important;
+}
+
+.orders-card {
+  width: 100%;
+  padding: clamp(22px, 4vw, 45px);
+  box-sizing: border-box;
+  background: #fffdf8 !important;
+  color: #211b13 !important;
+  border: 1px solid #e5d4ae !important;
+  border-radius: 10px;
+  box-shadow: 0 12px 35px rgba(92, 66, 25, 0.07);
+}
+
+.orders-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.orders-label {
+  margin: 0 0 14px;
+  color: #a87318 !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.orders-header h1 {
+  margin: 0 0 14px;
+  color: #211b13 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 54px);
+  font-weight: 600;
+}
+
+.orders-description {
+  color: #756d61 !important;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.orders-count {
+  margin: 25px 0;
+  color: #a87318 !important;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-item {
+  padding: clamp(16px, 3vw, 28px);
+  box-sizing: border-box;
+  background: #fffefa !important;
+  color: #211b13 !important;
+  border: 1px solid #e5d4ae !important;
+  border-radius: 8px;
+  box-shadow: 0 6px 22px rgba(92, 66, 25, 0.045);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.order-item:hover {
+  border-color: #c9a454 !important;
+  box-shadow: 0 12px 28px rgba(92, 66, 25, 0.09);
+}
+
+.order-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee4d1 !important;
+}
+
+.order-small-label {
+  color: #a87318 !important;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.order-item-header h2 {
+  margin: 8px 0 0;
+  color: #211b13 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  overflow-wrap: anywhere;
+}
+
+.order-status {
+  display: inline-block;
+  max-width: 220px;
+  padding: 9px 13px;
+  background: #fbf5e7 !important;
+  color: #8a641d !important;
+  border: 1px solid #dfc995 !important;
+  border-radius: 30px;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.order-date {
+  margin: 15px 0;
+  color: #756d61 !important;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.order-products {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 15px 0;
+}
+
+.order-product {
+  display: grid;
+  grid-template-columns: 85px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 12px 0;
+  background: transparent !important;
+  border-bottom: 1px solid #f0e7d6 !important;
+}
+
+.order-product:last-child {
+  border-bottom: none !important;
+}
+
+.order-product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85px;
+  height: 90px;
+  padding: 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fbf8f1 !important;
+  border: 1px solid #eee4d1 !important;
+  border-radius: 5px;
+}
+
+.order-product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.order-product-image span {
+  color: #a87318 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+}
+
+.order-product-info {
+  min-width: 0;
+}
+
+.order-product-info h3 {
+  margin: 0 0 7px;
+  color: #211b13 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.order-product-info p {
+  margin: 5px 0;
+  color: #756d61 !important;
+  font-size: 12px;
+}
+
+.order-product-info > span {
+  color: #756d61 !important;
+  font-size: 12px;
+}
+
+.order-product-total {
+  color: #a87318 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 20px;
+  border-top: 1px solid #dfc995 !important;
+}
+
+.order-total span {
+  color: #756d61 !important;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.order-total strong {
+  color: #a87318 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.empty-orders {
+  padding: 35px 22px;
+  background: #fffefa !important;
+  color: #211b13 !important;
+  border: 1px solid #e5d4ae !important;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.orders-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 18px;
+  background: #fbf2dc !important;
+  color: #a87318 !important;
+  border: 1px solid #dfc995 !important;
+  border-radius: 50%;
+  font-size: 23px;
+}
+
+.empty-orders h2 {
+  color: #211b13 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+}
+
+.empty-orders p {
+  color: #756d61 !important;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.orders-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 43px;
+  margin-top: 15px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  background: linear-gradient(120deg, #c99a3b, #e4c477, #b78324) !important;
+  color: #fffdf8 !important;
+  border: 1px solid #bd8b2d !important;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.orders-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 420px;
+  margin: 38px auto 15px;
+  color: #a87318 !important;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.orders-divider::before,
+.orders-divider::after {
+  flex: 1;
+  height: 1px;
+  background: #e5d4ae;
+  content: "";
+}
+
+.orders-footer-text {
+  margin: 0;
+  color: #756d61 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  text-align: center;
+}
+
+/* White and gold navbar */
+
+.navbar {
+  background: #fffdf8 !important;
+  border-bottom: 1px solid #e9dfcc !important;
+  box-shadow: 0 4px 18px rgba(92, 66, 25, 0.05);
+}
+
+.navbar .logo {
+  color: #a87318 !important;
+}
+
+.navbar .nav-links a {
+  color: #30271c !important;
+}
+
+.navbar .nav-links a:hover {
+  color: #b78324 !important;
+}
+
+.navbar .logout-button {
+  background: #fffdf8 !important;
+  color: #956617 !important;
+  border: 1px solid #bd8b2d !important;
+}
+
+@media (max-width: 600px) {
+  .orders-page {
+    padding: 25px 12px 45px;
+  }
+
+  .orders-card {
+    padding: 20px 13px;
+  }
+
+  .order-product {
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .order-product-image {
+    width: 65px;
+    height: 70px;
+  }
+
+  .order-product-total {
+    grid-column: 2;
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .order-product-info h3 {
+    font-size: 20px;
+  }
+
+  .order-item-header h2 {
+    font-size: 21px;
+  }
+}
+
+/* ==========================================
+   CHRONOS ATELIER — ROYAL AUTH PAGES
+   Login & Register
+========================================== */
+
+.auth-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 20px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(ellipse at top, #fffdf8, transparent 65%),
+    #fbf8f1 !important;
+  color: #211b13 !important;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.auth-card {
+  width: 100%;
+  padding: clamp(25px, 5vw, 42px);
+  box-sizing: border-box;
+  background: #fffefa !important;
+  color: #211b13 !important;
+  border: 1px solid #e5d4ae !important;
+  border-radius: 9px;
+  box-shadow: 0 15px 40px rgba(92, 66, 25, 0.09) !important;
+}
+
+.auth-card h1,
+.auth-card h2 {
+  color: #211b13 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}
+
+.auth-card p {
+  color: #756d61 !important;
+  line-height: 1.8;
+}
+
+.auth-card label {
+  color: #594a34 !important;
+}
+
+.auth-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  background: #fffdf8 !important;
+  color: #211b13 !important;
+  border: 1px solid #dfd1b6 !important;
+  border-radius: 5px;
+}
+
+.auth-card input::placeholder {
+  color: #a79a87 !important;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #b78324 !important;
+  box-shadow: 0 0 0 3px rgba(183, 131, 36, 0.1);
+}
+
+.auth-card button {
+  width: 100%;
+  min-height: 45px;
+  padding: 12px 18px;
+  background: linear-gradient(
+    120deg,
+    #c99a3b,
+    #e4c477,
+    #b78324
+  ) !important;
+  color: #fffdf8 !important;
+  border: 1px solid #bd8b2d !important;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.auth-card button:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.auth-card a {
+  color: #a87318 !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-card a:hover {
+  color: #805514 !important;
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 30px 14px;
+  }
+
+  .auth-card {
+    padding: 25px 20px;
+  }
+}
+
+/* =========================================
+   CHRONOS ATELIER
+   ROYAL IVORY & GOLD THEME
+   ========================================= */
+
+:root {
+  --royal-bg: #fbf8f1;
+  --royal-white: #ffffff;
+  --royal-gold: #b88a35;
+  --royal-gold-light: #dfc27d;
+  --royal-text: #292319;
+  --royal-muted: #817869;
+  --royal-border: #e8dfcc;
+}
+
+/* 1. Allgemeiner Hintergrund */
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+  background: var(--royal-bg) !important;
+  color: var(--royal-text);
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* 2. Schwarze Seitenhintergründe entfernen */
+.home-page,
+.home-luxury,
+.about-page,
+.products-page,
+.products-background,
+.contact-page,
+.cart-page,
+.profile-page,
+.orders-page,
+.orders-background {
+  background: var(--royal-bg) !important;
+  color: var(--royal-text) !important;
+}
+
+/* 3. Weiße, elegante Inhaltsbereiche */
+.products-card,
+.orders-card,
+.cart-container,
+.profile-container,
+.contact-container,
+.about-story,
+.about-values {
+  background: var(--royal-white) !important;
+  color: var(--royal-text) !important;
+  border: 1px solid var(--royal-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(94, 69, 29, 0.06);
+}
+
+/* 4. Produktkarten */
+.product-card {
+  background: var(--royal-white) !important;
+  color: var(--royal-text) !important;
+  border: 1px solid var(--royal-border) !important;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(94, 69, 29, 0.06);
+  overflow: hidden;
+}
+
+.product-card h3,
+.product-card p,
+.product-price,
+.product-category {
+  color: var(--royal-text);
+}
+
+/* 5. Kontaktformular und Eingabefelder */
+input,
+textarea,
+select {
+  background: var(--royal-white) !important;
+  color: var(--royal-text) !important;
+  border: 1px solid var(--royal-border) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #938a7b !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--royal-gold) !important;
+  box-shadow: 0 0 0 3px rgba(184, 138, 53, 0.12);
+}
+
+/* 6. Goldene Buttons */
+button,
+.product-button,
+.orders-button {
+  background: var(--royal-gold) !important;
+  color: var(--royal-white) !important;
+  border: 1px solid var(--royal-gold) !important;
+  border-radius: 6px;
+  transition: background 0.25s ease,
+              transform 0.25s ease;
+}
+
+button:hover,
+.product-button:hover,
+.orders-button:hover {
+  background: #98702a !important;
+  border-color: #98702a !important;
+}
+
+/* 7. Texte und Überschriften */
+h1,
+h2,
+h3,
+h4,
+p,
+label {
+  color: var(--royal-text);
+}
+
+.orders-description,
+.orders-footer-text {
+  color: var(--royal-muted) !important;
+}
+
+/* 8. Goldene Details */
+a {
+  color: var(--royal-gold);
+}
+
+a:hover {
+  color: #98702a;
+}
+
+/* 9. Responsive Darstellung */
+@media (max-width: 768px) {
+  .products-card,
+  .orders-card,
+  .cart-container,
+  .profile-container,
+  .contact-container {
+    border-radius: 10px;
+    padding: 18px;
+  }
+}
+
+/* =====================================
+   CHRONOS ATELIER - ROYAL PROFILE THEME
+   Ivory White & Gold
+   ===================================== */
+
+.profile-page {
+  min-height: 100vh !important;
+  background: #fbf8f1 !important;
+  color: #292319 !important;
+  padding: 40px 20px !important;
+}
+
+.profile-background {
+  min-height: calc(100vh - 80px) !important;
+  background: #fbf8f1 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  padding: 30px 16px !important;
+}
+
+.profile-card {
+  width: 100% !important;
+  max-width: 650px !important;
+  box-sizing: border-box !important;
+  padding: 42px !important;
+  background: #ffffff !important;
+  color: #292319 !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 35px rgba(91, 68, 30, 0.08) !important;
+}
+
+.profile-header {
+  text-align: center !important;
+  margin-bottom: 30px !important;
+}
+
+.profile-label {
+  color: #b88a35 !important;
+  letter-spacing: 4px !important;
+  font-size: 11px !important;
+}
+
+.profile-header h1 {
+  color: #292319 !important;
+  font-size: 34px !important;
+  font-weight: 400 !important;
+}
+
+.profile-description,
+.profile-footer-text {
+  color: #817869 !important;
+}
+
+.profile-info-card {
+  background: #fffdf9 !important;
+  color: #292319 !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 10px !important;
+  padding: 24px !important;
+}
+
+.profile-info-card h2 {
+  color: #292319 !important;
+  text-align: center !important;
+}
+
+.profile-avatar {
+  background: #e4c477 !important;
+  color: #ffffff !important;
+  border: 1px solid #b88a35 !important;
+}
+
+.profile-info-row {
+  border-bottom: 1px solid #eee5d5 !important;
+  color: #817869 !important;
+  padding: 14px 0 !important;
+}
+
+.profile-info-row strong {
+  color: #292319 !important;
+  overflow-wrap: anywhere;
+}
+
+.profile-active {
+  color: #8b6b2e !important;
+}
+
+.profile-button,
+.profile-secondary-button,
+.profile-logout-button {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 13px 18px !important;
+  margin-top: 12px !important;
+  border-radius: 6px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.profile-button {
+  background: #b88a35 !important;
+  color: #ffffff !important;
+  border: 1px solid #b88a35 !important;
+}
+
+.profile-secondary-button {
+  background: #ffffff !important;
+  color: #8b6b2e !important;
+  border: 1px solid #d7bd80 !important;
+}
+
+.profile-logout-button {
+  background: #fbf8f1 !important;
+  color: #6f5a3b !important;
+  border: 1px solid #e8dfcc !important;
+}
+
+.profile-button:hover {
+  background: #98702a !important;
+}
+
+.profile-secondary-button:hover,
+.profile-logout-button:hover {
+  background: #f4ead5 !important;
+}
+
+.profile-error {
+  color: #a33b32 !important;
+}
+
+.profile-divider {
+  border-top: 1px solid #e8dfcc !important;
+  margin-top: 30px !important;
+  padding-top: 20px !important;
+  text-align: center !important;
+  color: #b88a35 !important;
+}
+
+.profile-divider span {
+  color: #b88a35 !important;
+  letter-spacing: 3px !important;
+  font-size: 10px !important;
+}
+
+@media (max-width: 600px) {
+  .profile-page {
+    padding: 20px 12px !important;
+  }
+
+  .profile-background {
+    padding: 12px 0 !important;
+  }
+
+  .profile-card {
+    padding: 24px 18px !important;
+  }
+
+  .profile-header h1 {
+    font-size: 28px !important;
+  }
+}
+
+/* =========================================
+   CHRONOS ATELIER - ROYAL CART
+   Ivory White & Gold
+   ========================================= */
+
+.cart-page {
+  min-height: 100vh !important;
+  padding: 35px 20px !important;
+  background: #fbf8f1 !important;
+  color: #292319 !important;
+  box-sizing: border-box;
+}
+
+.cart-background {
+  min-height: calc(100vh - 70px) !important;
+  padding: 25px 12px !important;
+  background: #fbf8f1 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  box-sizing: border-box;
+}
+
+.cart-main-card {
+  width: 100% !important;
+  max-width: 1120px !important;
+  padding: 42px !important;
+  box-sizing: border-box !important;
+  background: #ffffff !important;
+  color: #292319 !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 35px rgba(91, 68, 30, 0.07) !important;
+}
+
+.cart-empty-card {
+  max-width: 760px !important;
+}
+
+.cart-header {
+  text-align: center !important;
+  margin-bottom: 35px !important;
+}
+
+.cart-label,
+.cart-summary-label {
+  color: #b88a35 !important;
+  letter-spacing: 4px !important;
+  font-size: 10px !important;
+}
+
+.cart-header h1 {
+  color: #292319 !important;
+  font-size: 36px !important;
+  font-weight: 400 !important;
+  margin: 12px 0 !important;
+}
+
+.cart-description {
+  color: #817869 !important;
+  line-height: 1.8 !important;
+}
+
+.cart-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.8fr) !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+
+.cart-products,
+.cart-summary {
+  background: #ffffff !important;
+  color: #292319 !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 10px !important;
+  padding: 24px !important;
+  min-width: 0;
+}
+
+.cart-products-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding-bottom: 18px !important;
+  margin-bottom: 8px !important;
+  border-bottom: 1px solid #e8dfcc !important;
+  color: #292319 !important;
+}
+
+.cart-product {
+  display: grid !important;
+  grid-template-columns: 100px minmax(0, 1fr) auto !important;
+  gap: 18px !important;
+  align-items: center !important;
+  padding: 22px 0 !important;
+  background: #ffffff !important;
+  color: #292319 !important;
+  border-bottom: 1px solid #eee7da !important;
+}
+
+.cart-product-image {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #fbf8f1 !important;
+  border: 1px solid #eee5d5 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.cart-product-image img {
+  display: block !important;
+  width: 100% !important;
+  height: 100px !important;
+  object-fit: contain !important;
+}
+
+.cart-product-info {
+  min-width: 0;
+}
+
+.cart-product-category {
+  color: #b88a35 !important;
+  font-size: 10px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase;
+}
+
+.cart-product-info h2 {
+  color: #292319 !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
+
+.cart-product-description {
+  color: #817869 !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+}
+
+.cart-product-price,
+.cart-product-total {
+  color: #8b6b2e !important;
+  font-weight: 600 !important;
+}
+
+.cart-product-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.cart-quantity {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 5px !important;
+  background: #fbf8f1 !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 6px !important;
+  color: #292319 !important;
+}
+
+.cart-quantity button {
+  width: 30px !important;
+  height: 30px !important;
+  padding: 0 !important;
+  background: #ffffff !important;
+  color: #8b6b2e !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 4px !important;
+}
+
+.cart-quantity span {
+  color: #292319 !important;
+  min-width: 14px;
+  text-align: center;
+}
+
+.cart-remove {
+  background: transparent !important;
+  color: #8c5548 !important;
+  border: none !important;
+  font-size: 12px !important;
+  cursor: pointer;
+}
+
+.cart-shopping-actions {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  margin-top: 24px !important;
+}
+
+.cart-primary-button,
+.cart-checkout-button {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 14px 18px !important;
+  background: #b88a35 !important;
+  color: #ffffff !important;
+  border: 1px solid #b88a35 !important;
+  border-radius: 6px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.cart-secondary-button {
+  display: inline-block !important;
+  padding: 12px 16px !important;
+  background: #ffffff !important;
+  color: #8b6b2e !important;
+  border: 1px solid #d7bd80 !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+}
+
+.cart-clear-button {
+  padding: 12px 16px !important;
+  background: #fbf8f1 !important;
+  color: #755d3b !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+}
+
+.cart-summary-top {
+  padding-bottom: 16px !important;
+  border-bottom: 1px solid #e8dfcc !important;
+}
+
+.cart-summary-top h2 {
+  color: #292319 !important;
+  font-size: 23px !important;
+  font-weight: 400 !important;
+}
+
+.cart-summary-line {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 14px 0 !important;
+  color: #817869 !important;
+}
+
+.cart-summary-line strong {
+  color: #292319 !important;
+}
+
+.cart-free {
+  color: #8b6b2e !important;
+}
+
+.cart-summary-divider {
+  border-top: 1px solid #e8dfcc !important;
+  margin: 10px 0 !important;
+}
+
+.cart-total-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 15px 0 22px !important;
+  color: #292319 !important;
+}
+
+.cart-total-row strong {
+  color: #8b6b2e !important;
+  font-size: 21px !important;
+}
+
+.cart-primary-button:hover,
+.cart-checkout-button:hover {
+  background: #98702a !important;
+  color: #ffffff !important;
+}
+
+.cart-secondary-button:hover,
+.cart-clear-button:hover {
+  background: #f4ead5 !important;
+}
+
+.cart-secure-text,
+.cart-payment-note {
+  text-align: center !important;
+  color: #817869 !important;
+  font-size: 12px !important;
+  line-height: 1.7 !important;
+}
+
+.cart-empty-content {
+  text-align: center !important;
+  max-width: 500px !important;
+  margin: 35px auto !important;
+}
+
+.cart-empty-icon {
+  width: 64px !important;
+  height: 64px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto 18px !important;
+  background: #fbf8f1 !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 50% !important;
+}
+
+.cart-empty-icon span {
+  font-size: 26px !important;
+}
+
+.cart-empty-content h2 {
+  color: #292319 !important;
+  font-weight: 400 !important;
+}
+
+.cart-empty-content p {
+  color: #817869 !important;
+  line-height: 1.8 !important;
+  margin-bottom: 22px !important;
+}
+
+.cart-divider {
+  margin-top: 30px !important;
+  padding-top: 22px !important;
+  border-top: 1px solid #e8dfcc !important;
+  text-align: center !important;
+}
+
+.cart-divider span {
+  color: #b88a35 !important;
+  letter-spacing: 3px !important;
+  font-size: 10px !important;
+}
+
+.cart-footer-text {
+  text-align: center !important;
+  color: #817869 !important;
+  font-size: 13px !important;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .cart-page {
+    padding: 18px 10px !important;
+  }
+
+  .cart-background {
+    padding: 10px 0 !important;
+  }
+
+  .cart-main-card {
+    padding: 22px 14px !important;
+  }
+
+  .cart-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .cart-product {
+    grid-template-columns: 75px minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .cart-product-image img {
+    height: 80px !important;
+  }
+
+  .cart-product-actions {
+    grid-column: 1 / -1;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap;
+  }
+
+  .cart-header h1 {
+    font-size: 29px !important;
+  }
+
+  .cart-shopping-actions {
+    align-items: stretch !important;
+    flex-direction: column !important;
+  }
+
+  .cart-secondary-button,
+  .cart-clear-button {
+    text-align: center !important;
+  }
+}
+
+/* ==========================================
+   CHRONOS ATELIER - ROYAL CONTACT PAGE
+   Ivory White & Gold
+   ========================================== */
+
+.contact-page {
+  min-height: 100vh !important;
+  padding: 35px 20px !important;
+  background: #fbf8f1 !important;
+  color: #292319 !important;
+  box-sizing: border-box !important;
+}
+
+.contact-background {
+  min-height: calc(100vh - 70px) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  padding: 25px 10px !important;
+  background: #fbf8f1 !important;
+  box-sizing: border-box !important;
+}
+
+.contact-card {
+  width: 100% !important;
+  max-width: 700px !important;
+  padding: 42px !important;
+  background: #ffffff !important;
+  color: #292319 !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 35px rgba(91, 68, 30, 0.07) !important;
+  box-sizing: border-box !important;
+}
+
+.contact-header {
+  text-align: center !important;
+  margin-bottom: 30px !important;
+}
+
+.contact-label {
+  color: #b88a35 !important;
+  letter-spacing: 4px !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+}
+
+.contact-header h1 {
+  color: #292319 !important;
+  font-size: 36px !important;
+  font-weight: 400 !important;
+  margin: 12px 0 !important;
+}
+
+.contact-description {
+  color: #817869 !important;
+  font-size: 14px !important;
+  line-height: 1.9 !important;
+}
+
+.contact-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+}
+
+.contact-field {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.contact-field label {
+  color: #554a39 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100% !important;
+  padding: 14px 15px !important;
+  box-sizing: border-box !important;
+  background: #fffefa !important;
+  color: #292319 !important;
+  border: 1px solid #e3d8c3 !important;
+  border-radius: 5px !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease !important;
+}
+
+.contact-field input {
+  min-height: 48px !important;
+}
+
+.contact-field textarea {
+  min-height: 140px !important;
+  resize: vertical !important;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #a49a89 !important;
+  opacity: 1 !important;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: #b88a35 !important;
+  box-shadow: 0 0 0 3px rgba(184, 138, 53, 0.12) !important;
+}
+
+.contact-button {
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 13px 20px !important;
+  background: #b88a35 !important;
+  color: #ffffff !important;
+  border: 1px solid #b88a35 !important;
+  border-radius: 5px !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  letter-spacing: 0.5px !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease,
+              transform 0.2s ease !important;
+}
+
+.contact-button:hover {
+  background: #98702a !important;
+  border-color: #98702a !important;
+  transform: translateY(-1px);
+}
+
+.contact-submitted-message {
+  margin-top: 25px !important;
+  padding: 25px !important;
+  background: #fbf8f1 !important;
+  color: #292319 !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 8px !important;
+}
+
+.contact-submitted-message h2 {
+  color: #806124 !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+}
+
+.contact-success-text,
+.contact-message-details p {
+  color: #665d50 !important;
+  line-height: 1.8 !important;
+  overflow-wrap: anywhere;
+}
+
+.contact-message-content {
+  padding: 14px !important;
+  background: #ffffff !important;
+  color: #292319 !important;
+  border: 1px solid #e8dfcc !important;
+  border-radius: 5px !important;
+  white-space: pre-wrap !important;
+}
+
+.contact-info {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 20px !important;
+  margin-top: 35px !important;
+  padding: 25px 0 !important;
+  border-top: 1px solid #eee7da !important;
+}
+
+.contact-info-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-align: center !important;
+}
+
+.contact-info-item span {
+  color: #8b806e !important;
+  font-size: 10px !important;
+  letter-spacing: 2px !important;
+}
+
+.contact-info-item a {
+  color: #a77a28 !important;
+  font-size: 13px !important;
+  text-decoration: none !important;
+  overflow-wrap: anywhere;
+}
+
+.contact-info-item a:hover {
+  color: #76541b !important;
+  text-decoration: underline !important;
+}
+
+.contact-divider {
+  padding-top: 22px !important;
+  border-top: 1px solid #e8dfcc !important;
+  text-align: center !important;
+}
+
+.contact-divider span {
+  color: #b88a35 !important;
+  font-size: 10px !important;
+  letter-spacing: 3px !important;
+}
+
+.contact-footer-text {
+  color: #817869 !important;
+  text-align: center !important;
+  font-size: 13px !important;
+  margin-top: 15px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 15px 10px !important;
+  }
+
+  .contact-background {
+    padding: 10px 0 !important;
+  }
+
+  .contact-card {
+    padding: 25px 18px !important;
+  }
+
+  .contact-header h1 {
+    font-size: 30px !important;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =================================
+   CHRONOS ATELIER - ROYAL FOOTER
+   Ivory White & Gold
+   ================================= */
+
+footer,
+.site-footer,
+.footer,
+.footer-container {
+  background: #fbf8f1 !important;
+  color: #302719 !important;
+  border-top: 1px solid #e6d7b9 !important;
+  box-shadow: none !important;
+}
+
+footer *,
+.site-footer *,
+.footer *,
+.footer-container * {
+  color: inherit;
+}
+
+footer h2,
+footer h3,
+footer h4,
+.site-footer h2,
+.site-footer h3,
+.footer h2,
+.footer h3 {
+  color: #a77a28 !important;
+}
+
+footer a,
+.site-footer a,
+.footer a,
+.footer-container a {
+  color: #79623b !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+footer a:hover,
+.site-footer a:hover,
+.footer a:hover,
+.footer-container a:hover {
+  color: #b88a35 !important;
+}
+
+footer hr,
+.site-footer hr,
+.footer hr {
+  border-color: #e6d7b9 !important;
+}
+
+footer button,
+.site-footer button,
+.footer button {
+  background: #b88a35 !important;
+  color: #ffffff !important;
+  border-color: #b88a35 !important;
+}
+
+/* ==========================================
+   CHRONOS ATELIER - ROYAL FOOTER
+   Ivory White & Gold
+   ========================================== */
+
+.footer {
+  width: 100% !important;
+  background: #fbf8f1 !important;
+  color: #51432d !important;
+  border-top: 1px solid #e5d5b5 !important;
+  box-shadow: none !important;
+  margin-top: 0 !important;
+}
+
+.footer .footer-container {
+  width: min(1200px, 92%) !important;
+  margin: 0 auto !important;
+  padding: 55px 0 40px !important;
+  background: transparent !important;
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
+  gap: 40px !important;
+}
+
+.footer .footer-logo {
+  display: inline-block;
+  color: #a77a28 !important;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  text-decoration: none !important;
+  letter-spacing: 1px;
+}
+
+.footer .footer-tagline {
+  color: #796d59 !important;
+  line-height: 1.9;
+  margin: 18px 0;
+}
+
+.footer .footer-brand-line {
+  width: 55px;
+  height: 1px;
+  background: #b88a35 !important;
+  margin: 20px 0;
+}
+
+.footer .footer-home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 17px;
+  color: #9a7027 !important;
+  border: 1px solid #c8a45e !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  transition: 0.25s ease;
+}
+
+.footer .footer-home-button:hover {
+  color: #fff !important;
+  background: #b88a35 !important;
+}
+
+.footer .footer-column {
+  background: transparent !important;
+}
+
+.footer .footer-column h3 {
+  color: #9a7027 !important;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 22px;
+}
+
+.footer .footer-links a {
+  display: block;
+  width: fit-content;
+  color: #786b56 !important;
+  text-decoration: none !important;
+  margin: 0 0 14px;
+  transition: color 0.2s ease;
+}
+
+.footer .footer-links a:hover,
+.footer .footer-bottom-links a:hover {
+  color: #b88a35 !important;
+}
+
+.footer .footer-bottom {
+  width: 100% !important;
+  padding: 22px 4% !important;
+  background: #f1e8d7 !important;
+  border-top: 1px solid #e1d0ad !important;
+  color: #75664f !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important;
+  box-sizing: border-box;
+}
+
+.footer .footer-bottom p {
+  color: #75664f !important;
+  margin: 0;
+  font-size: 12px;
+}
+
+.footer .footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer .footer-bottom-links a {
+  color: #75664f !important;
+  text-decoration: none !important;
+  font-size: 12px;
+}
+
+.footer .footer-bottom-links span {
+  color: #b88a35 !important;
+}
+
+.footer .footer-signature {
+  color: #a77a28 !important;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 850px) {
+  .footer .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 30px !important;
+  }
+
+  .footer .footer-bottom {
+    justify-content: center !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer .footer-container {
+    grid-template-columns: 1fr !important;
+    padding: 35px 0 !important;
+    gap: 28px !important;
+  }
+
+  .footer .footer-bottom {
+    flex-direction: column;
+    padding: 22px 15px !important;
+  }
+
+  .footer .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ==========================================
+   CHRONOS ATELIER - ROYAL AUTH PAGES
+   Login & Register | Ivory White and Gold
+   ========================================== */
+
+.auth-page,
+.auth-background,
+.auth-wrapper,
+.login-page,
+.register-page,
+.login-background,
+.register-background {
+  background: #fbf8f1 !important;
+  color: #302719 !important;
+}
+
+.auth-page,
+.login-page,
+.register-page {
+  min-height: calc(100vh - 80px);
+  background: #fbf8f1 !important;
+  padding: 55px 20px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.auth-container,
+.auth-card,
+.auth-box,
+.login-card,
+.register-card,
+.login-container,
+.register-container {
+  background: #fffdf8 !important;
+  color: #302719 !important;
+  border: 1px solid #dfc895 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 40px rgba(115, 83, 30, 0.09) !important;
+}
+
+.auth-card,
+.login-card,
+.register-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 38px 34px !important;
+  margin: 0 auto;
+}
+
+.auth-card h1,
+.auth-card h2,
+.login-card h1,
+.login-card h2,
+.register-card h1,
+.register-card h2 {
+  color: #302719 !important;
+}
+
+.auth-card p,
+.login-card p,
+.register-card p {
+  color: #786b56 !important;
+}
+
+.auth-card label,
+.login-card label,
+.register-card label {
+  display: block;
+  color: #65543a !important;
+}
+
+.auth-card input,
+.login-card input,
+.register-card input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff !important;
+  color: #302719 !important;
+  border: 1px solid #e2d5bd !important;
+  border-radius: 7px !important;
+}
+
+.auth-card input::placeholder,
+.login-card input::placeholder,
+.register-card input::placeholder {
+  color: #a49a89 !important;
+}
+
+.auth-card input:focus,
+.login-card input:focus,
+.register-card input:focus {
+  outline: none;
+  border-color: #b88a35 !important;
+  box-shadow: 0 0 0 3px rgba(184, 138, 53, 0.12) !important;
+}
+
+.auth-card button,
+.login-card button,
+.register-card button,
+.auth-button,
+.login-button,
+.register-button {
+  background: linear-gradient(135deg, #cba34e, #b1842d) !important;
+  color: #ffffff !important;
+  border: 1px solid #b88a35 !important;
+  border-radius: 7px !important;
+  transition: 0.25s ease;
+}
+
+.auth-card button:hover,
+.login-card button:hover,
+.register-card button:hover,
+.auth-button:hover,
+.login-button:hover,
+.register-button:hover {
+  background: #a77a28 !important;
+}
+
+.auth-card a,
+.login-card a,
+.register-card a {
+  color: #a77a28 !important;
+}
+
+.auth-card a:hover,
+.login-card a:hover,
+.register-card a:hover {
+  color: #805b1d !important;
+}
+
+@media (max-width: 520px) {
+  .auth-page,
+  .login-page,
+  .register-page {
+    padding: 30px 16px !important;
+  }
+
+  .auth-card,
+  .login-card,
+  .register-card {
+    padding: 28px 22px !important;
+  }
+}
+
+/* ==========================================
+   CHRONOS ATELIER - ROYAL PRODUCT DETAILS
+   ========================================== */
+
+.product-details-page,
+.product-details-background,
+.product-detail-page,
+.product-detail-background {
+  background: #fbf8f1 !important;
+  color: #302719 !important;
+}
+
+.product-details-page,
+.product-detail-page {
+  min-height: 80vh;
+  padding: 45px 20px !important;
+}
+
+.product-details-card,
+.product-detail-card,
+.product-details-container,
+.product-detail-container {
+  background: #fffdf8 !important;
+  color: #302719 !important;
+  border: 1px solid #e6d7b9 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 35px rgba(115, 83, 30, 0.09) !important;
+}
+
+.product-details-card h1,
+.product-details-card h2,
+.product-detail-card h1,
+.product-detail-card h2,
+.product-details-container h1,
+.product-detail-container h1 {
+  color: #302719 !important;
+}
+
+.product-details-card p,
+.product-detail-card p,
+.product-details-container p,
+.product-detail-container p {
+  color: #786b56 !important;
+}
+
+.product-details-card img,
+.product-detail-card img {
+  background: #fffdf8 !important;
+  border-radius: 10px;
+}
+
+.product-details-card button,
+.product-detail-card button,
+.product-details-container button,
+.product-detail-container button {
+  background: linear-gradient(135deg, #cba34e, #b1842d) !important;
+  color: #ffffff !important;
+  border: 1px solid #b88a35 !important;
+  border-radius: 7px !important;
+}
+
+.product-details-card button:hover,
+.product-detail-card button:hover,
+.product-details-container button:hover,
+.product-detail-container button:hover {
+  background: #a77a28 !important;
+}
+
+.product-details-card a,
+.product-detail-card a,
+.product-details-container a,
+.product-detail-container a {
+  color: #a77a28 !important;
+}
+
+/* ===== Royal Orders Design ===== */
+
+.orders-page {
+  background: #fbf8f1 !important;
+  color: #302719 !important;
+  padding: 40px 20px !important;
+}
+
+.orders-background {
+  background: #fbf8f1 !important;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.orders-card,
+.order-item {
+  background: #fffdf8 !important;
+  border: 1px solid #e5d7bd !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 25px rgba(105, 78, 35, 0.07);
+}
+
+.order-item {
+  padding: 28px !important;
+  margin-bottom: 22px;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(250px, 1.5fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.order-item h2,
+.order-item h3,
+.order-item p,
+.order-item strong,
+.order-item span {
+  color: #302719;
+  overflow-wrap: anywhere;
+}
+
+.orders-label,
+.order-small-label {
+  color: #a77a28 !important;
+  letter-spacing: 2px;
+  font-size: 11px !important;
+  font-weight: 700;
+}
+
+.order-item-header {
+  min-width: 0;
+}
+
+.order-item-header h2,
+.order-item-header h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.order-date {
+  color: #81745f !important;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.order-status {
+  display: inline-block;
+  background: #f5edda !important;
+  color: #89631e !important;
+  border: 1px solid #e5d2a7;
+  border-radius: 30px;
+  padding: 8px 13px;
+  font-size: 12px;
+}
+
+.order-products {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.order-product {
+  display: grid;
+  grid-template-columns: 95px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.order-product-image {
+  width: 95px !important;
+  height: 95px !important;
+  background: #ffffff !important;
+  border: 1px solid #eee3d0;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.order-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.order-product-info {
+  min-width: 0;
+}
+
+.order-product-info h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.order-product-info p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 4px 0;
+  color: #81745f !important;
+}
+
+.order-product-total {
+  white-space: nowrap;
+  color: #987027 !important;
+  font-size: 15px;
+}
+
+.order-total {
+  border-top: 1px solid #e9dfcc;
+  margin-top: 22px;
+  padding-top: 18px;
+}
+
+.order-total strong {
+  color: #987027 !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+}
+
+@media (max-width: 650px) {
+  .order-item {
+    grid-template-columns: 1fr;
+    padding: 18px !important;
+  }
+
+  .order-product {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .order-product-image {
+    width: 72px !important;
+    height: 72px !important;
+  }
+
+  .order-product-total {
+    grid-column: 2;
+  }
+
+  .order-total strong {
+    font-size: 22px;
+  }
+}
+
+/* =========================================
+   CHRONOS ATELIER — ROYAL ORDERS
+   Ivory White & Gold
+========================================= */
+
+.orders-page {
+  min-height: 80vh;
+  padding: 55px 24px;
+  background: #fbf8f1 !important;
+  color: #302719 !important;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.orders-background {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  background: transparent !important;
+}
+
+.orders-card {
+  width: 100%;
+  padding: 42px;
+  background: #fffdf8 !important;
+  border: 1px solid #e8dcc6;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(93, 68, 29, 0.07);
+}
+
+.orders-header {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.orders-label {
+  color: #a67b32 !important;
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+.orders-header h1 {
+  color: #302719 !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  margin: 15px 0;
+}
+
+.orders-description {
+  color: #81745f !important;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.orders-count {
+  color: #8c6a30 !important;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  grid-template-areas:
+    "header header"
+    "date date"
+    "products products"
+    "total total";
+  gap: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+  background: #ffffff !important;
+  color: #302719 !important;
+  border: 1px solid #e7dac1 !important;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(93, 68, 29, 0.045);
+}
+
+.order-item-header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee5d5;
+}
+
+.order-small-label {
+  display: block;
+  color: #a67b32 !important;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 9px;
+}
+
+.order-item-header h2 {
+  margin: 0;
+  color: #302719 !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 9px 15px;
+  color: #896723 !important;
+  background: #f8f1e2 !important;
+  border: 1px solid #e8d7b3;
+  border-radius: 30px;
+  font-size: 12px;
+}
+
+.order-date {
+  grid-area: date;
+  margin: -7px 0 0;
+  color: #81745f !important;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.order-products {
+  grid-area: products;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.order-product {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 22px;
+  padding: 20px 0;
+  min-width: 0;
+  border-bottom: 1px solid #f0e8da;
+}
+
+.order-product:last-child {
+  border-bottom: none;
+}
+
+.order-product-image {
+  width: 110px !important;
+  height: 110px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fffdf8 !important;
+  border: 1px solid #eee3d0;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.order-product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.order-product-image span {
+  color: #a67b32 !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+}
+
+.order-product-info {
+  min-width: 0;
+}
+
+.order-product-info h3 {
+  margin: 0 0 10px;
+  color: #302719 !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.45;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+.order-product-info p,
+.order-product-info span {
+  display: block;
+  margin: 5px 0;
+  color: #81745f !important;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.order-product-total {
+  color: #96702d !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.order-total {
+  grid-area: total;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+  padding-top: 22px;
+  border-top: 1px solid #e8dcc6;
+}
+
+.order-total span {
+  color: #554a39 !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.order-total strong {
+  color: #96702d !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.orders-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 14px 24px;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #c9a34f, #a77b27) !important;
+  border: 1px solid #b48b39;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.orders-button:hover {
+  background: #96702d !important;
+  transform: translateY(-1px);
+}
+
+.orders-divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 38px;
+  color: #a67b32 !important;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.orders-divider::before,
+.orders-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e8dcc6;
+}
+
+.orders-footer-text {
+  color: #81745f !important;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+.empty-orders {
+  padding: 40px 20px;
+  text-align: center;
+  background: #fffdf8 !important;
+  border: 1px solid #e8dcc6;
+  border-radius: 12px;
+}
+
+.empty-orders h2 {
+  color: #302719 !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.empty-orders p {
+  color: #81745f !important;
+  line-height: 1.8;
+}
+
+.orders-icon {
+  color: #a67b32 !important;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 650px) {
+  .orders-page {
+    padding: 25px 12px;
+  }
+
+  .orders-card {
+    padding: 22px 14px;
+  }
+
+  .order-item {
+    padding: 18px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .order-product {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .order-product-image {
+    width: 76px !important;
+    height: 76px !important;
+  }
+
+  .order-product-info h3 {
+    font-size: 16px;
+  }
+
+  .order-product-total {
+    grid-column: 2;
+    font-size: 15px;
+  }
+
+  .order-total strong {
+    font-size: 23px;
+  }
+}
+
+/* =========================================
+   CHRONOS ATELIER — ROYAL LEGAL PAGES
+   Impressum, AGB & Datenschutz
+========================================= */
+
+.impressum-page,
+.agb-page,
+.datenschutz-page,
+.legal-page {
+  min-height: 80vh;
+  padding: 55px 24px;
+  background: #fbf8f1 !important;
+  color: #302719 !important;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.impressum-background,
+.agb-background,
+.datenschutz-background,
+.legal-background {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  background: transparent !important;
+}
+
+.impressum-card,
+.agb-card,
+.datenschutz-card,
+.legal-card {
+  padding: 48px;
+  background: #fffdf8 !important;
+  color: #302719 !important;
+  border: 1px solid #e8dcc6 !important;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(93, 68, 29, 0.07);
+}
+
+/* Page headings */
+
+.impressum-header,
+.agb-header,
+.datenschutz-header,
+.legal-header {
+  text-align: center;
+  padding-bottom: 28px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #e8dcc6;
+}
+
+.impressum-label,
+.agb-label,
+.datenschutz-label,
+.legal-label {
+  color: #a67b32 !important;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.impressum-header h1,
+.agb-header h1,
+.datenschutz-header h1,
+.legal-header h1 {
+  color: #302719 !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 0 14px;
+}
+
+.impressum-description,
+.agb-description,
+.datenschutz-description,
+.legal-description {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #81745f !important;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Legal text sections */
+
+.impressum-content,
+.agb-content,
+.datenschutz-content,
+.legal-content {
+  color: #554a39 !important;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.impressum-content section,
+.agb-content section,
+.datenschutz-content section,
+.legal-content section {
+  margin-bottom: 30px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #f0e8da;
+}
+
+.impressum-content section:last-child,
+.agb-content section:last-child,
+.datenschutz-content section:last-child,
+.legal-content section:last-child {
+  border-bottom: none;
+}
+
+.impressum-content h2,
+.agb-content h2,
+.datenschutz-content h2,
+.legal-content h2 {
+  color: #96702d !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.impressum-content h3,
+.agb-content h3,
+.datenschutz-content h3,
+.legal-content h3 {
+  color: #55452c !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 400;
+  margin: 18px 0 8px;
+}
+
+.impressum-content p,
+.agb-content p,
+.datenschutz-content p,
+.legal-content p {
+  color: #655a49 !important;
+  margin: 0 0 12px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.impressum-content li,
+.agb-content li,
+.datenschutz-content li,
+.legal-content li {
+  color: #655a49 !important;
+  margin-bottom: 8px;
+  line-height: 1.8;
+}
+
+.impressum-content a,
+.agb-content a,
+.datenschutz-content a,
+.legal-content a {
+  color: #96702d !important;
+  text-decoration: underline;
+  text-decoration-color: #d9c18d;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.impressum-content a:hover,
+.agb-content a:hover,
+.datenschutz-content a:hover,
+.legal-content a:hover {
+  color: #74521c !important;
+}
+
+/* Decorative footer */
+
+.impressum-divider,
+.agb-divider,
+.datenschutz-divider,
+.legal-divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 35px;
+  color: #a67b32 !important;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.impressum-divider::before,
+.impressum-divider::after,
+.agb-divider::before,
+.agb-divider::after,
+.datenschutz-divider::before,
+.datenschutz-divider::after,
+.legal-divider::before,
+.legal-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e8dcc6;
+}
+
+.impressum-footer-text,
+.agb-footer-text,
+.datenschutz-footer-text,
+.legal-footer-text {
+  margin-top: 18px;
+  color: #81745f !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .impressum-page,
+  .agb-page,
+  .datenschutz-page,
+  .legal-page {
+    padding: 25px 12px;
+  }
+
+  .impressum-card,
+  .agb-card,
+  .datenschutz-card,
+  .legal-card {
+    padding: 25px 18px;
+  }
+
+  .impressum-header h1,
+  .agb-header h1,
+  .datenschutz-header h1,
+  .legal-header h1 {
+    font-size: 30px;
+  }
+
+  .impressum-content h2,
+  .agb-content h2,
+  .datenschutz-content h2,
+  .legal-content h2 {
+    font-size: 20px;
+  }
+}

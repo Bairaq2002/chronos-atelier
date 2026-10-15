@@ -1,24 +1,42 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const User = require("../models/User");
 
-const users = require("../data/users");
+const JWT_SECRET = process.env.JWT_SECRET;
 
-const JWT_SECRET = process.env.JWT_SECRET || "chronos-atelier-secret";
+if (!JWT_SECRET) {
+  throw new Error("JWT_SECRET fehlt in der .env-Datei");
+}
 
 // POST /api/auth/register
 const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    if (!name || !email || !password) {
+    if (
+      typeof name !== "string" ||
+      typeof email !== "string" ||
+      typeof password !== "string" ||
+      !name.trim() ||
+      !email.trim() ||
+      !password
+    ) {
       return res.status(400).json({
         message: "Name, E-Mail und Passwort sind erforderlich",
       });
     }
 
-    const existingUser = users.find(
-      (user) => user.email === email
-    );
+    if (password.length < 8) {
+      return res.status(400).json({
+        message: "Das Passwort muss mindestens 8 Zeichen enthalten",
+      });
+    }
+
+    const normalizedEmail = email.trim().toLowerCase();
+
+    const existingUser = await User.findOne({
+      email: normalizedEmail,
+    });
 
     if (existingUser) {
       return res.status(409).json({
@@ -28,28 +46,37 @@ const register = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = {
-      id: users.length + 1,
-      name,
-      email,
+    const newUser = await User.create({
+      name: name.trim(),
+      email: normalizedEmail,
       password: hashedPassword,
-    };
+    });
 
-    users.push(newUser);
-
-    res.status(201).json({
+    return res.status(201).json({
       message: "Registrierung erfolgreich",
       user: {
-        id: newUser.id,
+        id: newUser._id.toString(),
         name: newUser.name,
         email: newUser.email,
       },
     });
   } catch (error) {
-    console.error(error);
+    console.error("Registrierungsfehler:", error);
 
-    res.status(500).json({
-      message: "Serverfehler",
+    if (error.code === 11000) {
+      return res.status(409).json({
+        message: "Benutzer existiert bereits",
+      });
+    }
+
+    if (error.name === "ValidationError") {
+      return res.status(400).json({
+        message: "Die eingegebenen Daten sind ungültig",
+      });
+    }
+
+    return res.status(500).json({
+      message: "Serverfehler bei der Registrierung",
     });
   }
 };
@@ -59,15 +86,20 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    if (!email || !password) {
+    if (
+      typeof email !== "string" ||
+      typeof password !== "string" ||
+      !email.trim() ||
+      !password
+    ) {
       return res.status(400).json({
         message: "E-Mail und Passwort sind erforderlich",
       });
     }
 
-    const user = users.find(
-      (item) => item.email === email
-    );
+    const user = await User.findOne({
+      email: email.trim().toLowerCase(),
+    }).select("+password");
 
     if (!user) {
       return res.status(401).json({
@@ -88,7 +120,7 @@ const login = async (req, res) => {
 
     const token = jwt.sign(
       {
-        id: user.id,
+        id: user._id.toString(),
         email: user.email,
       },
       JWT_SECRET,
@@ -97,41 +129,55 @@ const login = async (req, res) => {
       }
     );
 
-    res.json({
+    return res.json({
       message: "Login erfolgreich",
       token,
       user: {
-        id: user.id,
+        id: user._id.toString(),
         name: user.name,
         email: user.email,
       },
     });
   } catch (error) {
-    console.error(error);
+    console.error("Loginfehler:", error);
 
-    res.status(500).json({
-      message: "Serverfehler",
+    return res.status(500).json({
+      message: "Serverfehler beim Login",
     });
   }
 };
 
 // GET /api/auth/profile
-const getProfile = (req, res) => {
-  const user = users.find((item) => item.id === req.user.id);
+const getProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id);
 
-  if (!user) {
-    return res.status(404).json({
-      message: "Benutzer nicht gefunden",
+    if (!user) {
+      return res.status(404).json({
+        message: "Benutzer nicht gefunden",
+      });
+    }
+
+    return res.json({
+      user: {
+        id: user._id.toString(),
+        name: user.name,
+        email: user.email,
+      },
+    });
+  } catch (error) {
+    console.error("Profilfehler:", error);
+
+    if (error.name === "CastError") {
+      return res.status(404).json({
+        message: "Benutzer nicht gefunden",
+      });
+    }
+
+    return res.status(500).json({
+      message: "Profil konnte nicht geladen werden",
     });
   }
-
-  res.json({
-    user: {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-    },
-  });
 };
 
 module.exports = {

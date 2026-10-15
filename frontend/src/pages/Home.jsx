@@ -3,109 +3,148 @@ import WelcomeBanner from "../components/WelcomeBanner";
 
 function Home() {
   return (
-    <main className="home-page">
-
-      {/* Hero */}
-      <section className="home-hero">
-        <div className="home-hero-overlay"></div>
-
-        <div className="home-hero-content">
-
-          <p className="home-label">
+    <main className="home-luxury">
+      {/* HERO */}
+      <section className="home-luxury-hero">
+        <div className="home-luxury-copy">
+          <p className="home-luxury-eyebrow">
             CHRONOS ATELIER
           </p>
 
           <h1>
-            Zeitlose
+            Zeitlose Eleganz
             <br />
-            Eleganz
+            für besondere Momente.
           </h1>
 
-          <div className="home-line"></div>
-
-          <p className="home-hero-text">
-            Entdecken Sie exklusive Uhren,
-            die klassische Eleganz mit modernem
-            Design verbinden.
+          <p className="home-luxury-description">
+            Entdecken Sie unsere exklusive Kollektion
+            aus erlesenen Uhren, die Stil, Präzision und
+            Individualität vereinen.
           </p>
 
-          <Link
-            to="/products"
-            className="home-hero-button"
-          >
-            Kollektion entdecken
-          </Link>
+          <div className="home-luxury-actions">
+            <Link
+              to="/products"
+              className="home-luxury-primary"
+            >
+              Kollektion entdecken →
+            </Link>
 
+            <Link
+              to="/about"
+              className="home-luxury-outline"
+            >
+              Mehr erfahren
+            </Link>
+          </div>
+        </div>
+
+        <div className="home-luxury-image">
+          <img
+            src="/watches/watch2.jpg"
+            alt="Elegante goldene Armbanduhr von Chronos Atelier"
+          />
+          <div className="home-luxury-image-caption">
+            <span>TIMELESS DESIGN</span>
+            <span>Exklusivität in jedem Detail</span>
+          </div>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="home-introduction">
+      {/* BENEFITS */}
+      <section className="home-luxury-benefits">
+        <article className="home-luxury-benefit">
+          <span>◇</span>
+          <div>
+            <h3>Exklusive Uhren</h3>
+            <p>Für besondere Momente.</p>
+          </div>
+        </article>
 
-        <div className="home-introduction-content">
+        <article className="home-luxury-benefit">
+          <span>♕</span>
+          <div>
+            <h3>Höchste Qualität</h3>
+            <p>Mit Liebe zum Detail.</p>
+          </div>
+        </article>
 
-          <p className="home-section-label">
+        <article className="home-luxury-benefit">
+          <span>♧</span>
+          <div>
+            <h3>Schneller Versand</h3>
+            <p>Zuverlässig und sicher.</p>
+          </div>
+        </article>
+
+        <article className="home-luxury-benefit">
+          <span>♢</span>
+          <div>
+            <h3>Sicherer Einkauf</h3>
+            <p>Ihre Daten sind geschützt.</p>
+          </div>
+        </article>
+      </section>
+
+      {/* EXISTING WELCOME BANNER */}
+      <WelcomeBanner />
+
+      {/* BRAND STORY */}
+      <section className="home-luxury-story">
+        <div className="home-luxury-story-copy">
+          <p className="home-luxury-eyebrow">
             UNSERE PHILOSOPHIE
           </p>
 
           <h2>
-            Zeit ist mehr als
+            Eine Leidenschaft
             <br />
-            nur ein Augenblick.
+            für besondere Zeitmesser.
           </h2>
 
           <p>
-            Bei Chronos Atelier verbinden wir
-            zeitlose Ästhetik mit anspruchsvollem
-            Design. Jede Uhr steht für Stil,
-            Persönlichkeit und besondere Momente.
+            Chronos Atelier steht für zeitloses Design,
+            ausgewählte Materialien und die Liebe zu
+            außergewöhnlichen Details.
           </p>
 
           <Link
             to="/about"
-            className="home-secondary-button"
+            className="home-luxury-text-link"
           >
-            Mehr über uns
+            Unsere Geschichte entdecken →
           </Link>
-
         </div>
 
-      </section>
-
-      {/* Welcome Banner */}
-      <WelcomeBanner />
-
-      {/* Final CTA */}
-      <section className="home-final">
-
-        <div className="home-final-content">
-
-          <p className="home-section-label">
-            CHRONOS ATELIER
-          </p>
-
-          <h2>
-            Finden Sie Ihre
-            <br />
-            perfekte Uhr.
-          </h2>
-
-          <p>
-            Entdecken Sie unsere exklusive
-            Kollektion für Damen und Herren.
-          </p>
-
-          <Link
-            to="/products"
-            className="home-final-button"
-          >
-            Zur Kollektion
-          </Link>
-
+        <div className="home-luxury-story-image">
+          <img
+            src="/watches/watch3.jpg"
+            alt="Elegante Uhr aus der Chronos Atelier Kollektion"
+          />
         </div>
-
       </section>
 
+      {/* COLLECTION CTA */}
+      <section className="home-luxury-collection">
+        <p className="home-luxury-eyebrow">
+          UNSERE KOLLEKTION
+        </p>
+
+        <h2>Finden Sie Ihren persönlichen Stil.</h2>
+
+        <p>
+          Entdecken Sie Uhren, die Eleganz und
+          Persönlichkeit miteinander verbinden.
+        </p>
+
+        <Link
+          to="/products"
+          className="home-luxury-primary"
+        >
+          Alle Uhren entdecken →
+        </Link>
+      </section>
     </main>
   );
 }
